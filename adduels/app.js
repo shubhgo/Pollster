@@ -1,3 +1,12 @@
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/adduels', function(err) {
+  if(err){
+    console.log('connection error', err);
+  } else {
+    console.log('connection successful');
+  }
+});
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
