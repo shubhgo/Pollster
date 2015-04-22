@@ -15,7 +15,7 @@ var DuelSchema = new mongoose.Schema({
 	totalVotes: {type: Number, default: 0},
 	totalViews: {type: Number, default: 0},
 	status: {type: String, default: 'draft'},// possible values: draft, running, completed, paused
-	winStatus: type: String,// A, B, undefined
+	winStatus: String,// A, B, undefined
 	devNotes: String,
 	updated_at: {type: Date, default: Date.now},
 });
