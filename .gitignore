@@ -49,3 +49,4 @@ logs/*
 !.gitkeep
 
 .idea
+bower_components

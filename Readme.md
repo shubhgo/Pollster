@@ -2,13 +2,15 @@
 
 Stack:
 
-- Ember
+- Angular
+- [Angular Seed](https://github.com/angular/angular-seed)
 
 ## Startup
 
 In the client directory
 
-	$ ember server
+	$ node install
+	$ node start
 
 # Server:
 
