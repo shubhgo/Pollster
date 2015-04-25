@@ -14,6 +14,9 @@ router.get('/', function(req, res, next) {
     var duelIDs = duels.map(function(duel){
       return duel['_id'];
     });
+    res.statusCode = 200;
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.json(duelIDs);
   });
 });
@@ -27,6 +30,9 @@ router.get('/user/:userid', function(req, res, next) {
     var duelIDs = duels.map(function(duel){
       return duel['_id'];
     });
+    res.statusCode = 200;
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.json(duelIDs);
   });
 });
@@ -36,6 +42,9 @@ return duel details*/
 router.get('/:id', function(req, res, next) {
   Duel.findById(req.params.id, function (err, post) {
     if (err) return next(err);
+    res.statusCode = 200;
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.json(post);
   });
 });

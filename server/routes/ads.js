@@ -15,6 +15,9 @@ router.get('/', function(req, res, next) {
     var adIDs = ads.map(function(ad){
       return ad['_id'];
     });
+    res.statusCode = 200;
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.json(adIDs);
   });
 });
@@ -24,6 +27,9 @@ return ad details*/
 router.get('/:id', function(req, res, next) {
   Ad.findById(req.params.id, function (err, post) {
     if (err) return next(err);
+    res.statusCode = 200;
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.json(post);
   });
 });
