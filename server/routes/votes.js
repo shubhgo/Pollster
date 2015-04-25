@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var mongoose = require('mongoose');
-var Vote = require('../models/Votes.js');
+var Vote = require('../models/Vote.js');
 
 /*
 GET /votes listing. 
