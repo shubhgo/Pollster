@@ -4,7 +4,8 @@
 
 var adDuelsApp = angular.module('adDuelsApp', [
   'ngRoute',
-  'duelsControllers'
+  'duelsControllers',
+  'duelsFactory'
   // 'duelsServices'
 ]);
 
@@ -17,6 +18,6 @@ adDuelsApp.config(['$routeProvider',
 	  }).
 	  otherwise({
 	  	///fixit: asap remove hard coding
-	  	redirectTo: '/duels/5537ebc3d235bb4b27d2948c'
+	  	redirectTo: '/duels/553aa213beba92d6034594c6'
 	  });
 }]);
