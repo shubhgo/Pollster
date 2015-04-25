@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var DuelVoteSchema = new mongoose.Schema({
+var VoteSchema = new mongoose.Schema({
 	duelID: String,
 	voterID: String,
 	action: String,
@@ -9,4 +9,4 @@ var DuelVoteSchema = new mongoose.Schema({
 	updated_at: {type: Date, default: Date.now},
 });
 
-module.exports = mongoose.model('DuelVote', DuelVoteSchema);
+module.exports = mongoose.model('Vote', VoteSchema);
