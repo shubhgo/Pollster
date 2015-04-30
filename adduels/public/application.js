@@ -1,20 +1,29 @@
 'use strict';
 
-//Start by defining the main module and adding the module dependencies
-angular.module(ApplicationConfiguration.applicationModuleName, ApplicationConfiguration.applicationModuleVendorDependencies);
+/* App Module */
 
-// Setting HTML5 Location Mode
-angular.module(ApplicationConfiguration.applicationModuleName).config(['$locationProvider',
-	function($locationProvider) {
-		$locationProvider.hashPrefix('!');
-	}
+var adDuelsApp = angular.module('adduels', [
+  'ngRoute',
+  'duelsControllers',
+  'duelsFactory',
+  'voterDashControllers'
+  // 'duelsServices'
 ]);
 
-//Then define the init function for starting up the application
-angular.element(document).ready(function() {
-	//Fixing facebook bug with redirect
-	if (window.location.hash === '#_=_') window.location.hash = '#!';
-
-	//Then init the app
-	angular.bootstrap(document, [ApplicationConfiguration.applicationModuleName]);
-});
+adDuelsApp.config(['$routeProvider',
+	function($routeProvider) {
+		$routeProvider.
+			when('/voterDashboard', {
+				templateUrl: 'voterDashboard/voterDashboard.html',
+				controller: 'voterDashCtrl'
+			}).
+			when('/duels/:duelId', {
+				templateUrl: 'duels/duels.html',
+				controller: 'votingCtrl'
+			}).
+			otherwise({
+				///fixit: asap remove hard coding
+				redirectTo: '/voterDashboard'
+			});
+}]);
+// duels/553aa213beba92d6034594c6
