@@ -9,8 +9,8 @@ Stack:
 
 In the client directory
 
-	$ node install
-	$ node start
+	$ npm install
+	$ npm start
 
 App location: 
 [localhost:8000/app/index.html](localhost:8000/app/index.html)
