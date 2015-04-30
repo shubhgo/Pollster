@@ -14,7 +14,7 @@ Desktop.ini
 
 
 # npm
-node_modules
+node_modules/
 *.log
 *.gz
 
@@ -50,3 +50,11 @@ logs/*
 
 .idea
 bower_components
+
+.nodemonignore
+.sass-cache/
+npm-debug.log
+public/lib
+app/tests/coverage/
+.bower-*/
+.idea/
