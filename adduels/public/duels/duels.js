@@ -35,7 +35,7 @@ duelsControllers.controller('votingCtrl', ['$scope', '$routeParams', '$http', '$
     };
 
     $scope.next = function(action){
-    	/// todo: update the duel object
+    	/// todo: update the duel object with vote count etc
     	/// todo: record the vote
     	console.log(action);
 

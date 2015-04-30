@@ -87,20 +87,20 @@ app.get('/api/duels/analyst/:analystid/status/:status', function(req, res, next)
 });
 
 /* GET /duels/analyst/:analystid
-returns the ids of all the duels
+returns all the duels
 the analyst(:analystid) 
 */
 app.get('/api/duels/analyst/:analystid', function(req, res, next) {
   Duel.find({analystID: req.params.analystid}, function (err, duels) {
-    if (err) return next(err);
-    var duelIDs = duels.map(function(duel) {
-      return duel._id;
-    });
+    // if (err) return next(err);
+    // var duelIDs = duels.map(function(duel) {
+    //   return duel._id;
+    // });
 
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    res.json(duelIDs);
+    res.json(duels);
   });
 });
 
