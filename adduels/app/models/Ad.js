@@ -11,4 +11,4 @@ var ADSchema = new mongoose.Schema({
 	updated_at: {type: Date, default: Date.now},
 });
 
-module.exports = mongoose.model('Ad', ADSchema);
+mongoose.model('Ad', ADSchema);

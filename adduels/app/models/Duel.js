@@ -21,4 +21,3 @@ var DuelSchema = new mongoose.Schema({
 });
 
 mongoose.model('Duel', DuelSchema);
-module.exports = mongoose.model('Duel', DuelSchema);

@@ -9,4 +9,4 @@ var VoterSchema = new mongoose.Schema({
 	updated_at: {type: Date, default: Date.now},
 });
 
-module.exports = mongoose.model('Voter', VoterSchema);
+mongoose.model('Voter', VoterSchema);
