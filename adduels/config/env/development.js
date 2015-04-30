@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/adduels-dev',
+	db: 'mongodb://localhost/adduels',
 	app: {
 		title: 'adDuels - Development Environment'
 	},
