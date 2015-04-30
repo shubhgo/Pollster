@@ -7,6 +7,7 @@ var DuelSchema = new mongoose.Schema({
 	clickReward: {type: Number, default: 0},
 	winReward: {type: Number, default: 0},
 	totalVotedNeeded: {type: Number, default: 30},
+	analystID: String,
 	//results of the duel
 	votesACount: {type: Number, default: 0},
 	votesBCount: {type: Number, default: 0},

@@ -3,45 +3,29 @@
 module.exports = function(app) {
 
 var mongoose = require('mongoose');
-var Vote = mongoose.model('Vote');
+var Analyst = mongoose.model('Analyst');
 
 /*
-GET /votes listing. 
-returns a list of all the votes
+GET /analyst listing. 
+returns a list of all the analyst
 */
-///fix it: for debufing pursposes only. remove later
-app.get('/api/votes/', function(req, res, next) {
-  Vote.find(function (err, votes) {
+///fix it: for debuging pursposes only. remove later
+app.get('/api/analyst/', function(req, res, next) {
+  Analyst.find(function (err, analysts) {
     if (err) return next(err);
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    res.json(votes);
+    res.json(analysts);
   });
 });
 
 /*
-GET /votes/user/:user
-return all the duel IDs the user has voted on.
+POST /analyst 
+add new analyst as they are casted
 */
-app.get('/api/votes/user/:userid', function(req, res, next) {
-  Vote.find({voterID: req.params.userid}, function (err, votes) {
-    res.statusCode = 200;
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    var duelIDs = votes.map(function(vote){
-      return vote.duelID;
-    });
-    res.json(duelIDs);
-  });
-});
-
-/*
-POST /votes 
-add new votes as they are casted
-*/
-app.post('/api/votes/', function(req, res, next) {
-  Vote.create(req.body, function (err, post) {
+app.post('/api/analyst/', function(req, res, next) {
+  Analyst.create(req.body, function (err, post) {
     if (err) return next(err);
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -50,9 +34,9 @@ app.post('/api/votes/', function(req, res, next) {
   });
 });
 
-/* DELETE /votes/:id */
-app.delete('/api/votes/:id', function(req, res, next) {
-  Vote.findByIdAndRemove(req.params.id, req.body, function (err, post) {
+/* GET /analyst/:id */
+app.get('/api/analyst/:id', function(req, res, next) {
+  Analyst.findById(req.params.id, function (err, post) {
     if (err) return next(err);
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -61,11 +45,22 @@ app.delete('/api/votes/:id', function(req, res, next) {
   });
 });
 
-/* PUT /votes/:id 
-update votes after a winner is decided
+/* DELETE /analyst/:id */
+app.delete('/api/analyst/:id', function(req, res, next) {
+  Analyst.findByIdAndRemove(req.params.id, req.body, function (err, post) {
+    if (err) return next(err);
+    res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.json(post);
+  });
+});
+
+/* PUT /analyst/:id 
+update analyst after a winner is decided
 */
-app.put('/api/votes/:id', function(req, res, next) {
-  Vote.findByIdAndUpdate(req.params.id, req.body, function(err, post) {
+app.put('/api/analyst/:id', function(req, res, next) {
+  Analyst.findByIdAndUpdate(req.params.id, req.body, function(err, post) {
       if (err) return next(err);
       res.statusCode = 200;
       res.setHeader('Access-Control-Allow-Origin', '*');

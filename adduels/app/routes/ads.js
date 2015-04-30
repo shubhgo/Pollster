@@ -20,11 +20,11 @@ app.get('/api/ads/', function(req, res, next) {
   Ad.find(function (err, ads) {
     if (err) return next(err);
     var adIDs = ads.map(function(ad){
-      return ad['_id'];
+      return ad._id;
     });
     res.statusCode = 200;
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.json(adIDs);
   });
 });
@@ -35,8 +35,8 @@ app.get('/api/ads/:id', function(req, res, next) {
   Ad.findById(req.params.id, function (err, post) {
     if (err) return next(err);
     res.statusCode = 200;
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.json(post);
   });
 });

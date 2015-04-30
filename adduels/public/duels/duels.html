@@ -1,8 +1,43 @@
-<p>Keywords:</p><p>{{duel.keywords}}</p>
-<p>{{adA.text}}</p>
-<p>{{adB.text}}</p>
+  <div class="row">
+    <div class="col-sm-12"><p>Keywords:</p><p>{{duel.keywords}}</p></div>
+  </div>
 
-<button ng-click="next('VoteAdA')">AdA</button>
-<button ng-click="next('equal')">About the Same</button>
-<button ng-click="next('VoteAdB')">AdB</button>
-<button ng-click="next('skip')">Skip>></button>
+<div class="row">
+<div class="col-sm-6">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+              <h3 class="panel-title">Ad A</h3>
+	    </div>
+	  	<div class="panel-body">
+	  		<a href="{{adA.destinationURL}}">{{adA.title}}</a>
+	  		<p>{{adA.displayURL}}<br>
+	  		{{adA.line1}}<br>
+	  		{{adA.line2}}</p>
+	  	</div>
+	</div>
+</div>
+<div class="col-sm-6">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+              <h3 class="panel-title">Ad B</h3>
+	    </div>
+	  	<div class="panel-body">
+	  		<a href="{{adA.destinationURL}}">{{adB.title}}</a>
+	  		<p>{{adB.displayURL}}<br>
+	  		{{adB.line1}}<br>
+	  		{{adB.line2}}</p>
+  		</div>
+	</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-6"><button ng-click="next('VoteAdA')" class="btn btn-lg btn-primary">AdA</button></div>
+<div class="col-sm-6"><button ng-click="next('VoteAdB')" class="btn btn-lg btn-primary">AdB</button></div>
+
+</div>
+<br>
+<div class="row">
+<div class="col-sm-6"><button ng-click="next('equal')" class="btn btn-lg btn-primary">About the Same</button></div>
+
+	<div class="col-sm-6"><button ng-click="next('skip')" class="btn btn-lg btn-primary">Skip>></button></div>
+</div>
