@@ -38,7 +38,7 @@ app.get('/api/duels/user/:userid/status/:status', function(req, res, next) {
   function subtractArrays(a,b) {
     var subtacted = [];
     a.forEach(function(element) {
-      if (b.indexOf(element) == -1) subtacted.push(element);
+      if (b.indexOf(String(element)) == -1) subtacted.push(element);
     });
     return subtacted;
   };
@@ -56,6 +56,7 @@ app.get('/api/duels/user/:userid/status/:status', function(req, res, next) {
       });
 
       var toVoteOn = subtractArrays(duelIDs,votedDuelIDs);
+
       res.statusCode = 200;
       res.setHeader("Access-Control-Allow-Origin", "*");
       res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");

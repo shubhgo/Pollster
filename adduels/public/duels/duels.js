@@ -77,7 +77,7 @@ duelsControllers.controller('votingCtrl', ['$scope', '$routeParams', '$http', '$
 				    	///todo: replace user id hard coding
 				    	$http.get(baseURL+'/duels/user/32452345235/status/running').
 						success(function(data) {
-							$location.url('/duels/'+data[1]);
+							$location.url('/duels/'+data[0]);
 						}).
 						error(function(error) {
 							$scope.status = 'voterDashCtrl: failed to load duels/users/ /status/ '+ error.message;
