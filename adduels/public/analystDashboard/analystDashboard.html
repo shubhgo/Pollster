@@ -1,0 +1,13 @@
+<p>Duels running {{running}} </p>
+<p>Duels completed: {{completed}} </p>
+<p>Total number of duels: {{allDuelCount}} </p>
+<div class="col-sm-12">
+	<ul>
+        <li ng-repeat="duel in duels">
+        	<p>{{duel.keywords}}</p>
+        	<p>{{duel.votesACount}}</p>
+        	<p>{{duel.votesBCount}}</p>
+        	<p>{{duel.status}}</p>			
+		</li>
+	</ul>
+</div>
