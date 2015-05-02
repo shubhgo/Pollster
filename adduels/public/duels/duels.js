@@ -28,7 +28,8 @@ duelsControllers.controller('votingCtrl', ['$scope', '$routeParams', '$http', '$
                 $scope.duel = data;
                 getAd(data.adAID, true);
                 getAd(data.adBID, false);
-            })function(data, status, headers, config) {
+            })
+            .error(function(data, status, headers, config) {
                 errorRedirects(data, status, headers, config, $location);
             });
     };
@@ -64,7 +65,7 @@ duelsControllers.controller('votingCtrl', ['$scope', '$routeParams', '$http', '$
     	duels.updateDuel($scope.duel)
     		.success(function (argument) {
     			// Ad vote
-    			///todo: replace user id hard coding
+    			///todo: IMP****replace user id hard coding*****
     			var vote = {
     					duelID: $scope.duel._id,
 						voterID: '32452345235',
@@ -74,12 +75,12 @@ duelsControllers.controller('votingCtrl', ['$scope', '$routeParams', '$http', '$
 					.success(function(data, status, headers, config) {
 				    	var baseURL = 'http://localhost:3000/api';
 				    	///todo: replace user id hard coding
-				    	$http.get(baseURL+'/duels/user/32452345235/status/running').
+				    	$http.get(baseURL+'/duels/voter/status/running').
 						success(function(data) {
 							$location.url('/duels/'+data[0]);
 						}).
 						error(function(error) {
-							$scope.status = 'voterDashCtrl: failed to load duels/users/ /status/ '+ error.message;
+							$scope.status = 'voterDashCtrl: failed to load duels/voter/status/ '+ error.message;
 						});
 					})
 					.error(function(data, status, headers, config) {

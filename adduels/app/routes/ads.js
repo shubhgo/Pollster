@@ -10,11 +10,18 @@ module.exports = function(app) {
 var mongoose = require('mongoose');
 var Ad = mongoose.model('Ad');
 
-
+function ensureAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        next();
+    } else {
+        res.sendStatus(401);
+    }
+}
 /*
 GET /ads listing. 
 returns a list of all the ads id
 */
+///todo: depricate
 ///fix it: for debufing pursposes only. remove later
 app.get('/api/ads/', function(req, res, next) {
   Ad.find(function (err, ads) {
@@ -31,7 +38,7 @@ app.get('/api/ads/', function(req, res, next) {
 
 /* GET /ads/id 
 return ad details*/
-app.get('/api/ads/:id', function(req, res, next) {
+app.get('/api/ads/:id', ensureAuthenticated, function(req, res, next) {
   Ad.findById(req.params.id, function (err, post) {
     if (err) return next(err);
     res.statusCode = 200;
@@ -42,7 +49,8 @@ app.get('/api/ads/:id', function(req, res, next) {
 });
 
 /* POST /ads */
-app.post('/api/ads/', function(req, res, next) {
+app.post('/api/ads/', ensureAuthenticated, function(req, res, next) {
+  ///update: add check for analyst
   Ad.create(req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
@@ -50,7 +58,8 @@ app.post('/api/ads/', function(req, res, next) {
 });
 
 /* DELETE /ads/:id */
-app.delete('/api/ads/:id', function(req, res, next) {
+app.delete('/api/ads/:id', ensureAuthenticated, function(req, res, next) {
+  ///update: add check for analyst
   Ad.findByIdAndRemove(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
