@@ -25,7 +25,7 @@ analystDashControllers.controller('analystDashCtrl',['$scope', '$http', '$locati
 				if(singleDuel.status == 'completed') $scope.completed++;
 			})
 		}).
-		error(function(error) {
-			$scope.status = 'analystDashCtrl: failed to load duels/users/ /status/ '+ error.message;
+		error(function(data, status, headers, config) {
+				errorRedirects(data, status, headers, config, $location);
 		});
 }]);

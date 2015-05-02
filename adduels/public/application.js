@@ -39,7 +39,7 @@ adDuelsApp.config(['$routeProvider',
 			when('/fourOthree', {
 				templateUrl: 'launchPage/fourOthree.html',
 				controller: 'fourOthreeCtrl'
-			})
+			}).
 			when('/voterDashboard', {
 				templateUrl: 'voterDashboard/voterDashboard.html',
 				controller: 'voterDashCtrl'

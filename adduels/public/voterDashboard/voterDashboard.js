@@ -22,9 +22,6 @@ voterDashControllers.controller('voterDashCtrl',['$scope', '$http', '$location',
 			console.log('$scope.authentication.user: '+$scope.authentication.user);
 		}).
 		error(function(data, status, headers, config) {
-			///todo if error status is 401: redirect to the login screen
-			console.log('running duels for user failed');
-			$scope.status = status;
-			if (status == 401) $location.path('/login');;
+			errorRedirects(data, status, headers, config, $location);
 		});
 }]);

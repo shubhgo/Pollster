@@ -26,6 +26,7 @@ launchControllers.controller('signUpCtrl',['$scope', '$http', '$location', 'Auth
 	function($scope, $http, $location, Authentication) {
 		$scope.authentication = Authentication;
 		// If user is signed in then redirect back home
+		///todo: add check if voter or analyst
 		if ($scope.authentication.user) $location.path('/voterDashboard');
 
 		$scope.create = function(credentials) {
@@ -35,9 +36,8 @@ launchControllers.controller('signUpCtrl',['$scope', '$http', '$location', 'Auth
 
 				// And redirect to the index page
 				$location.path('/voterDashboard');
-			}).error(function(response) {
-				///todo: if response status is 401 then redirect to login page.
-				$scope.error = response.message;
+			}).error(function(data, status, headers, config) {
+				errorRedirects(data, status, headers, config, $location);
 			});
 		};
 }]);
@@ -55,9 +55,8 @@ launchControllers.controller('logInCtrl',['$scope', '$http', '$location', 'Authe
 
 				// And redirect to the index page
 				$location.path('/voterDashboard');
-			}).error(function(response) {
-				///todo: if response status is 401 then redirect to login page.
-				$scope.error = response.message;
+			}).error(function(data, status, headers, config) {
+				errorRedirects(data, status, headers, config, $location);
 			});
 		};
 }]);
@@ -69,12 +68,17 @@ launchControllers.controller('logOutCtrl', ['$scope', '$http', '$location', 'Aut
 		$scope.logout = function() {
 			$http.get('/auth/signout').
 			success(function(data, status, headers, config) {
-				$location.path('/loggedOut');
+				$location.path('/loggedout');
 			}).
 			error(function(data, status, headers, config) {
-				$scope.error = data;
+				errorRedirects(data, status, headers, config, $location);
 			});
 		};
+}]);
+
+launchControllers.controller('fourOthreeCtrl', [,
+	function() {
+		$scope.message = "How did you get here BRO??";
 }]);
 
 var usersFactory = angular.module('usersFactory', []);
@@ -90,3 +94,12 @@ usersFactory.factory('Authentication', [
 		return _this._data;
 	}
 ]);
+
+var errorRedirects = function(data, status, headers, config, $location) {
+	///todo if error status is 401: redirect to the login screen
+	console.log('API called failed');
+	console.log('data: ' + data);
+	console.log('status: ' + status);
+	if (status == 401) $location.path('/login');
+	if (status == 403) $location.path('/fourOthree');
+};

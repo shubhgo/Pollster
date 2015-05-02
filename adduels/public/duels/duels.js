@@ -17,9 +17,9 @@ duelsControllers.controller('votingCtrl', ['$scope', '$routeParams', '$http', '$
 	    	.success(function (data) {
 	    		isA? ($scope.adA = data): ($scope.adB = data);
 	    	})
-	    	.error(function (error) {
-	    		$scope.status = 'Unable to load ad with ID: ' + adID + ' Error: ' + error.message;
-	    	});
+	    	.error(function(data, status, headers, config) {
+                errorRedirects(data, status, headers, config, $location);
+            });
     };
 
     function getDuel(duelId) {
@@ -28,9 +28,8 @@ duelsControllers.controller('votingCtrl', ['$scope', '$routeParams', '$http', '$
                 $scope.duel = data;
                 getAd(data.adAID, true);
                 getAd(data.adBID, false);
-            })
-            .error(function (error) {
-                $scope.status = 'Unable to load Duel with ID: ' + duelId + ' error: ' + error.message;
+            })function(data, status, headers, config) {
+                errorRedirects(data, status, headers, config, $location);
             });
     };
 
@@ -87,9 +86,9 @@ duelsControllers.controller('votingCtrl', ['$scope', '$routeParams', '$http', '$
 						$scope.status = 'Unable to add vote: ' + vote + ' error: ' + error.message;
 					});
     		})
-    		.error(function (error) {
-    			$scope.status = 'Unable to update the duel: ' + $scope.duel._id + ' error: ' + error;
-    		});
+    		.error(function(data, status, headers, config) {
+                errorRedirects(data, status, headers, config, $location);
+            });
 
 
     	///todo: update duels table
