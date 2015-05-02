@@ -36,6 +36,7 @@ launchControllers.controller('signUpCtrl',['$scope', '$http', '$location', 'Auth
 				// And redirect to the index page
 				$location.path('/voterDashboard');
 			}).error(function(response) {
+				///todo: if response status is 401 then redirect to login page.
 				$scope.error = response.message;
 			});
 		};
@@ -55,7 +56,23 @@ launchControllers.controller('logInCtrl',['$scope', '$http', '$location', 'Authe
 				// And redirect to the index page
 				$location.path('/voterDashboard');
 			}).error(function(response) {
+				///todo: if response status is 401 then redirect to login page.
 				$scope.error = response.message;
+			});
+		};
+}]);
+
+launchControllers.controller('logOutCtrl', ['$scope', '$http', '$location', 'Authentication',
+	function($scope, $http, $location, Authentication) {
+		///todo:complete later
+		// $scope.authetica
+		$scope.logout = function() {
+			$http.get('/auth/signout').
+			success(function(data, status, headers, config) {
+				$location.path('/loggedOut');
+			}).
+			error(function(data, status, headers, config) {
+				$scope.error = data;
 			});
 		};
 }]);

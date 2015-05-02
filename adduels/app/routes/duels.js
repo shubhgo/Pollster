@@ -35,34 +35,40 @@ the user(:userid) has not voted on
 with the status(:status)
 */
 app.get('/api/duels/user/:userid/status/:status', function(req, res, next) {
-  function subtractArrays(a,b) {
-    var subtacted = [];
-    a.forEach(function(element) {
-      if (b.indexOf(String(element)) === -1) subtacted.push(element);
-    });
-    return subtacted;
-  }
+  if (!req.user) {
+    // res.status(401);
+    res.sendStatus(401);
+    // res.json();
+  } else {
+    var subtractArrays = function(a,b) {
+      var subtacted = [];
+      a.forEach(function(element) {
+        if (b.indexOf(String(element)) === -1) subtacted.push(element);
+      });
+      return subtacted;
+    };
 
-  Duel.find({status: req.params.status}, function (err, duels) {
-    if (err) return next(err);
-    var duelIDs = duels.map(function(duel) {
-      return duel._id;
-    });
-
-    Vote.find({voterID: req.params.userid}, function (err, votes) {
+    Duel.find({status: req.params.status}, function (err, duels) {
       if (err) return next(err);
-      var votedDuelIDs = votes.map(function(vote) {
-        return vote.duelID;
+      var duelIDs = duels.map(function(duel) {
+        return duel._id;
       });
 
-      var toVoteOn = subtractArrays(duelIDs,votedDuelIDs);
+      Vote.find({voterID: req.params.userid}, function (err, votes) {
+        if (err) return next(err);
+        var votedDuelIDs = votes.map(function(vote) {
+          return vote.duelID;
+        });
 
-      res.statusCode = 200;
-      res.setHeader('Access-Control-Allow-Origin', '*');
-      res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-      res.json(toVoteOn);
+        var toVoteOn = subtractArrays(duelIDs,votedDuelIDs);
+
+        res.statusCode = 200;
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+        res.json(toVoteOn);
+      });
     });
-  });
+  }
 });
 
 

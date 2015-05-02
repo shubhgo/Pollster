@@ -58,7 +58,6 @@ app.post('/auth/signin',function(req, res, next) {
  */
  app.get('/auth/signout', function(req, res, next) {
   req.logout();
+  res.json('success');
  });
-
-
 };
