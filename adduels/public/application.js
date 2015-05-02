@@ -6,14 +6,28 @@ var adDuelsApp = angular.module('adduels', [
   'ngRoute',
   'duelsControllers',
   'duelsFactory',
+  'usersFactory',
   'voterDashControllers',
-  'analystDashControllers'
+  'analystDashControllers',
+  'launchControllers'
   // 'duelsServices'
 ]);
 
 adDuelsApp.config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider.
+			when('/launch', {
+				templateUrl: 'launchPage/launch.html',
+				controller: 'launchCtrl'
+			}).
+			when('/signup', {
+				templateUrl: 'launchPage/signup.html',
+				controller: 'signUpCtrl'
+			}).
+			when('/login', {
+				templateUrl: 'launchPage/login.html',
+				controller: 'logInCtrl'
+			}).
 			when('/voterDashboard', {
 				templateUrl: 'voterDashboard/voterDashboard.html',
 				controller: 'voterDashCtrl'
