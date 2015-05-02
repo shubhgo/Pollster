@@ -32,10 +32,14 @@ adDuelsApp.config(['$routeProvider',
 				templateUrl: 'launchPage/logout.html',
 				controller: 'logOutCtrl'
 			}).
-			when('/loggedOut', {
+			when('/loggedout', {
 				templateUrl: 'launchPage/loggedout.html',
 				controller: 'logOutCtrl'
 			}).
+			when('/fourOthree', {
+				templateUrl: 'launchPage/fourOthree.html',
+				controller: 'fourOthreeCtrl'
+			})
 			when('/voterDashboard', {
 				templateUrl: 'voterDashboard/voterDashboard.html',
 				controller: 'voterDashCtrl'
