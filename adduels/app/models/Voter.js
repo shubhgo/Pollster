@@ -2,6 +2,8 @@ var mongoose = require('mongoose');
 
 var VoterSchema = new mongoose.Schema({
 	name: String,
+	username: String,
+	password: String,
 	email: String,
 	boostID: String,
 	income: {type: Number, default: 0},
