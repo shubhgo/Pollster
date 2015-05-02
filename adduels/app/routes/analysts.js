@@ -3,7 +3,7 @@
 module.exports = function(app) {
 
 var mongoose = require('mongoose');
-var Analyst = mongoose.model('Analyst');
+var Analyst = mongoose.model('User');
 
 /*
 GET /analyst listing. 
