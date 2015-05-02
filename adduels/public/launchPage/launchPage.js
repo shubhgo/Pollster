@@ -15,7 +15,7 @@ launchControllers.controller('launchCtrl',['$scope', '$http', '$location', 'Auth
 		$scope.login = function() {
 			$location.path('/login');
 		};
-		
+
 		$scope.signup = function() {
 			$location.path('/signup');
 		};
@@ -26,15 +26,15 @@ launchControllers.controller('signUpCtrl',['$scope', '$http', '$location', 'Auth
 	function($scope, $http, $location, Authentication) {
 		$scope.authentication = Authentication;
 		// If user is signed in then redirect back home
-		if ($scope.authentication.user) $location.path('/');
+		if ($scope.authentication.user) $location.path('/voterDashboard');
 
-		$scope.signup = function() {
-			$http.post('/auth/signup', $scope.credentials).success(function(response) {
+		$scope.create = function(credentials) {
+			$http.post('/auth/signup', credentials).success(function(response) {
 				// If successful we assign the response to the global user model
 				$scope.authentication.user = response;
 
 				// And redirect to the index page
-				$location.path('/');
+				$location.path('/voterDashboard');
 			}).error(function(response) {
 				$scope.error = response.message;
 			});
@@ -45,15 +45,15 @@ launchControllers.controller('logInCtrl',['$scope', '$http', '$location', 'Authe
 	function($scope, $http, $location, Authentication) {
 		$scope.authentication = Authentication;
 		// If user is signed in then redirect back home
-		if ($scope.authentication.user) $location.path('/');
+		if ($scope.authentication.user) $location.path('/voterDashboard');
 
-		$scope.signin = function() {
-			$http.post('/auth/signin', $scope.credentials).success(function(response) {
+		$scope.signin = function(credentials) {
+			$http.post('/auth/signin', credentials).success(function(response) {
 				// If successful we assign the response to the global user model
 				$scope.authentication.user = response;
 
 				// And redirect to the index page
-				$location.path('/');
+				$location.path('/voterDashboard');
 			}).error(function(response) {
 				$scope.error = response.message;
 			});

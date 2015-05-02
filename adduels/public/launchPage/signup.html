@@ -1,15 +1,29 @@
 <h2>Sign Up</h2>
-<form role="form">
-  <div class="form-group">
+<form novalidate class="simple-form" role="form">
+<div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="credentials.name">
+</div>
+<div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" class="form-control" id="username" placeholder="Enter desired Username" ng-model="credentials.username">
+</div>
+<div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" class="form-control" id="password" placeholder="Enter password" ng-model="credentials.password">
+</div>
+<div class="form-group">
     <label for="email">Email:</label>
-    <input type="email" class="form-control" id="email" placeholder="Enter email">
-  </div>
-  <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-  </div>
-  <div class="checkbox">
-    <label><input type="checkbox"> Remember me</label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+    <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="credentials.email">
+</div>
+<div class="form-group">
+    <label for="role">Role:</label><br>
+    <input type="radio" name="voter" value="voter"  ng-model="credentials.role"> Voter
+    <input type="radio" name="analyst" value="analyst"  ng-model="credentials.role"> Analyst
+</div>
+<div class="form-group">
+    <label for="boostID">boostID:</label>
+    <input type="text" class="form-control" id="boostID" placeholder="Enter boostID"  ng-model="credentials.boostID">
+</div>
+<button type="submit" class="btn btn-default" ng-click="create(credentials)">Submit</button>
 </form>

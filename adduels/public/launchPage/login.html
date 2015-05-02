@@ -1,0 +1,12 @@
+<h2>Log In</h2>
+<form novalidate class="simple-form" role="form">
+<div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" class="form-control" id="username" placeholder="Enter Username" ng-model="credentials.username">
+</div>
+<div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" class="form-control" id="password" placeholder="Enter Password" ng-model="credentials.password">
+</div>
+<button type="submit" class="btn btn-default" ng-click="signin(credentials)">Submit</button>
+</form>
