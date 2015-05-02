@@ -9,6 +9,8 @@ launchControllers.controller('launchCtrl',['$scope', '$http', '$location', 'Auth
 		$scope.authentication = Authentication;
 
 		if ($scope.authentication.user) {
+			//todo: check and redirect to the analyst page
+			$location.path('/voterDashboard');
 			// render somthing different if the user is authenticated
 		};
 
@@ -46,6 +48,7 @@ launchControllers.controller('logInCtrl',['$scope', '$http', '$location', 'Authe
 	function($scope, $http, $location, Authentication) {
 		$scope.authentication = Authentication;
 		// If user is signed in then redirect back home
+		///todo: add check if voter or analyst
 		if ($scope.authentication.user) $location.path('/voterDashboard');
 
 		$scope.signin = function(credentials) {
@@ -63,11 +66,11 @@ launchControllers.controller('logInCtrl',['$scope', '$http', '$location', 'Authe
 
 launchControllers.controller('logOutCtrl', ['$scope', '$http', '$location', 'Authentication',
 	function($scope, $http, $location, Authentication) {
-		///todo:complete later
-		// $scope.authetica
 		$scope.logout = function() {
 			$http.get('/auth/signout').
 			success(function(data, status, headers, config) {
+				$scope.authentication = Authentication;
+				$scope.authentication.user = false;
 				$location.path('/loggedout');
 			}).
 			error(function(data, status, headers, config) {
@@ -100,6 +103,6 @@ var errorRedirects = function(data, status, headers, config, $location) {
 	console.log('API called failed');
 	console.log('data: ' + data);
 	console.log('status: ' + status);
-	if (status == 401) $location.path('/login');
-	if (status == 403) $location.path('/fourOthree');
+	if (Number(status) == 401) $location.path('/login');
+	if (Number(status) == 403) $location.path('/fourOthree');
 };

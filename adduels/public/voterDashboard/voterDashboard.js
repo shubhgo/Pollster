@@ -13,13 +13,13 @@ voterDashControllers.controller('voterDashCtrl',['$scope', '$http', '$location',
 		///todo: remove user hard coding
 		var baseURL = 'http://localhost:3000/api';
 
-		$http.get(baseURL+'/duels/user/32452345235/status/running').
+		$http.get(baseURL+'/duels/voter/status/running').
 		success(function(data) {
 			$scope.remaining = data.length;
 			$scope.startVoting = function() {
 				$location.url('/duels/'+data[0]);
 			};
-			console.log('$scope.authentication.user: '+$scope.authentication.user);
+			console.log('voterDashControllers.controller -- $scope.authentication.user: '+$scope.authentication.user);
 		}).
 		error(function(data, status, headers, config) {
 			errorRedirects(data, status, headers, config, $location);

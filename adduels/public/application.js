@@ -54,7 +54,7 @@ adDuelsApp.config(['$routeProvider',
 			}).
 			otherwise({
 				///fixit: asap remove hard coding
-				redirectTo: '/analystDashboard'
+				redirectTo: '/launch'
 			});
 }]);
 // duels/553aa213beba92d6034594c6
