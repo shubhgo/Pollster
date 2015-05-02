@@ -33,6 +33,9 @@ launchControllers.controller('signUpCtrl',['$scope', '$http', '$location', 'Auth
 
 		$scope.create = function(credentials) {
 			$http.post('/auth/signup', credentials).success(function(response) {
+				// was already signin
+				if (Number(response) == 200) $location.path('/voterDashboard');
+				
 				// If successful we assign the response to the global user model
 				$scope.authentication.user = response;
 

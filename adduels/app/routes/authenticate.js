@@ -30,6 +30,9 @@ function ensureUnAuthenticated(req, res, next) {
  */
 
 app.post('/auth/signup', ensureUnAuthenticated, function(req, res, next) {
+  if (req.isAuthenticated()) {
+    res.status(200);
+  }
   var user = new User(req.body);
 
   user.save(function(err) {
@@ -40,6 +43,7 @@ app.post('/auth/signup', ensureUnAuthenticated, function(req, res, next) {
     
     req.login(user, function(err) {
       if (err) return next(err);
+      res.status(201);
       res.json(user);
     });
   });
