@@ -1,2 +1,59 @@
-<button class="btn btn-lg btn-primary" ng-click="signup()">Sign Up</button>
-<button class="btn btn-lg btn-primary" ng-click="login()">Log In</button>
+<div class='row sg-nav-bar'>
+<button class='col-sm-2 btn btn-primary btn-lg' ng-click='home()'>Duels</button>
+<div class='col-sm-10'>
+	<form novalidate class='form-inline' role='form'>
+		<div class="row">
+			<div class="col-sm-offset-4 col-sm-3"><input type='text' class='form-control input-block input-small' id='username' placeholder='Username' ng-model='credentials.username'></div>
+			<div class="col-sm-3"><input type='password' class='form-control input-block' id='password' placeholder='Password' ng-model='credentials.password'></div>
+			<button type='submit' class='col-sm-2 btn btn-primary btn-lg' ng-click='signin(credentials)'>Log In</button>
+		</div>
+	</form>
+</div>
+</div>
+
+<br>
+
+<div class='row sg-header'>
+
+</div>
+
+<div class='row sg-features'>
+	<div class='col-sm-3'>
+		<h2>Save Money</h2>
+		<label>Hundreds instead of Thousands.</label>
+		<p>Get similar resuts to other industry standards at the fraction of the cost</p>
+	</div>
+	<div class='col-sm-3'>
+		<h2>Save Time</h2>
+		<label>Days instead of Weeks</label>
+		<p>Fastest turn around rate than any other public testing platform.</p>
+	</div>
+	<div class='col-sm-3'>
+		<h2>Get Insites</h2>
+		<label>Test Hypothesis.</label>
+		<p>Discover how to improve your customer experience.</p>
+	</div>
+	<div class='col-sm-3'>
+		<button type='submit' class='btn btn-primary btn-block btn-lg sg-signup' ng-click='signup()'>Sign Up</button>
+	</div>
+	<br>
+</div>
+
+<div class='row sg-footer'>
+	<div class='col-sm-4'>2015 © <a class='sg-footer-a' href='http://shubhamgoel.me'>Shubham Goel</a> & <a class='sg-footer-a' href='#'>Xavier Malina </a></div>
+	<div class='col-sm-8'> </div>
+</div>
+<!-- <div class='col-sm-6'>
+	<form novalidate class='form-inline' role='form'>
+	<div class='col-sm-2'><input type='text' class='form-control input-small' id='username' placeholder='Username' ng-model='credentials.username'></div>
+    <div class='col-sm-2'><input type='password' class='form-control' id='password' placeholder='Password' ng-model='credentials.password'></div>
+    <div class='col-sm-1'><button type='submit' class='btn btn-primary taller' ng-click='signin(credentials)'>Log In</button></div>
+	</form>
+</div>
+ --><!-- end of row -->
+<!-- <button class='btn btn-lg btn-primary' ng-click='signup()'>Sign Up</button>
+<button class='btn btn-lg btn-primary' ng-click='login()'>Log In</button>
+
+ -->
+ <br>
+

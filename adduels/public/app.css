@@ -1,8 +1,72 @@
 /* app css stylesheet */
+
+.sg-header:before {
+  content:url(assets/images/header_r.png);
+   /*content:url(http://placehold.it/968x150);*/
+}
+.sg-header {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 0px;
+  background-color: #FFFFFF;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left-style: solid;
+  border-width: 1px;
+  border-color: #3BA9D1;
+}
+.sg-features{
+  border-radius: 0px;
+  background-color: #FFFFFF;
+  border-top-style: none;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left-style: solid;
+  border-width: 1px;
+  border-color: #3BA9D1;
+}
+.sg-footer{
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 10px;
+  color: white;
+  background-color: #3476BE;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #3EAAD1;
+}
+.sg-footer-a{
+  color: white;
+}
+.sg-footer-a:hover{
+  color: white;
+}
+.sg-signup{
+  margin:50px 0px 0px 0px;
+}
+input.form-control{
+  height:  46px;
+  /*font-size: 18px*/
+}
+button.taller {
+  height: 46px;
+  /*font-size: 18px;*/
+}
 body{
   padding-top: 20px;
   padding-bottom: 20px;
+  background-color: #E2E5E6;
 }
+.border {
+  border-style: solid;
+  border-width: 1px;
+  border-color: red;
+}
+.form-inline .form-control
+
 .navbar {
   margin-bottom: 20px;
 }
