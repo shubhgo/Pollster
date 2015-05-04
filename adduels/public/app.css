@@ -17,6 +17,74 @@
   border-width: 1px;
   border-color: #3BA9D1;
 }
+.sg-voterdash-top{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 0px;
+  background-color: #FFFFFF;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left-style: solid;
+  border-width: 1px;
+  border-color: #3BA9D1;
+  padding: 10px;
+}
+.sg-voterdash-middle{
+  border-radius: 0px;
+  background-color: #FFFFFF;
+  border-top-style: none;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left-style: solid;
+  border-width: 1px;
+  border-color: #3BA9D1;
+  padding: 10px;
+}
+.sg-voterdash-votenow{
+  color: white;
+  background-color:#1A9172;
+  cursor:pointer;
+}
+p.sg-voterdash-underline{
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: lighter;
+}
+.sg-voterdash-underline {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 48px;
+  margin-bottom: 0px; 
+}
+.sg-voterdash{
+  margin-bottom: 0px;
+}
+.sg-voterdash-totalvotes{
+  color: white;
+  background-color:#D6455C
+}
+.sg-voterdash-totalearnings{
+  color: white;
+  background-color:#3BA9D1
+}
+.sg-voterdash-wins{
+  color: white;
+  background-color:#303C4F
+}
+.sg-vote-widget{
+  padding: 10px;
+}
+/*.sg-vote-widget-last{
+  padding-right: 5px;
+}
+*/.sg-vote {
+  color: white;
+}
+.sg-vote:hover{
+  color: white;
+}
 .sg-signup-header{
   border-top-right-radius: 10px;
   border-bottom-right-radius: 0px;
@@ -63,6 +131,7 @@ h1.sg-signup-header{
   border-style: solid;
   border-width: 1px;
   border-color: #3EAAD1;
+  padding-top: 10px;
 }
 .sg-footer-a{
   color: white;

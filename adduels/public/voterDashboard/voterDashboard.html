@@ -1,2 +1,66 @@
-<p>{{remaining}} duels remaining</p>
-<button ng-click="startVoting()" class="btn btn-lg btn-primary">Start Voting</button>
+<div class='row sg-nav-bar'>
+
+
+<div class='col-sm-2'><button class='col-sm-2 btn btn-primary btn-lg btn-block' ng-click='home()'>Duels</button></div>
+<div class='col-sm-2'><button class='col-sm-2 btn btn-primary btn-lg btn-block' ng-click='startVoting()'>Votes <span class="badge">{{remaining}}</span></button></div>
+<div class='col-sm-5'></div>
+<div class='col-sm-3'><button type="button" class="btn btn-lg btn-primary btn-block dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    Shubham Goel <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#">Profile</a></li>
+    <li><a href="#">Change Password</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Log Out</a></li>
+  </ul></div>
+</div>
+<br>
+
+<div class='row sg-voterdash-top'>
+<!-- <div class=''> -->
+
+    <div class='col-sm-4 sg-vote-widget'>
+		<div class="panel panel-default sg-voterdash sg-voterdash-votenow" ng-click='startVoting()'>
+		<div class="panel-body">
+			<h2 class='sg-voterdash-underline'>{{remaining}}</h2>
+			<p class='sg-voterdash-underline'><a class='sg-vote' ng-click='startVoting()'>Vote Now</a></p>
+		</div>
+		</div>
+    </div>
+    <div class='col-sm-4 sg-vote-widget'>
+		<div class="panel panel-default sg-voterdash sg-voterdash-totalvotes">
+		<div class="panel-body">
+	    	<h2 class='sg-voterdash-underline'>132</h2>
+	    	<p class='sg-voterdash-underline'>Votes casted</p>
+		</div>
+		</div>
+    </div>
+    <div class='col-sm-4 sg-vote-widget sg-vote-widget-last'>
+		<div class="panel panel-default sg-voterdash sg-voterdash-totalearnings">
+		<div class="panel-body">
+	    	<h2 class='sg-voterdash-underline'>$140.50</h2>
+	    	<p class='sg-voterdash-underline'>Total Earnings</p>
+		</div>
+		</div>
+    </div>
+ 	<div class='col-sm-4 sg-vote-widget'>
+		<div class="panel panel-default sg-voterdash sg-voterdash-wins">
+		<div class="panel-body">
+	 		<h2 class='sg-voterdash-underline'>78%</h2>
+	 		<p class='sg-voterdash-underline'>Wins</p>
+		</div>
+		</div>
+ 	</div>
+</div>
+
+
+
+
+<div class='row sg-footer'>
+    <div class='col-sm-12'>
+    	<p> 2015 © <a class='sg-footer-a' href='http://shubhamgoel.me'>Shubham Goel</a> & <a class='sg-footer-a' href='#'>Xavier Malina </a></p>
+    </div>
+</div>
+
+
+
