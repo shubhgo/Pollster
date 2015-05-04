@@ -82,9 +82,23 @@ app.post('/auth/signin', ensureUnAuthenticated, function(req, res, next) {
  * GET /auth/signout
  * Logout the user
  */
- app.get('/auth/signout', ensureAuthenticated, function(req, res, next) {
+app.get('/auth/signout', ensureAuthenticated, function(req, res, next) {
   req.session.destroy();
   req.logout();
   res.json('success');
- });
+});
+
+/*
+ * GET/auth/user
+ * get the user details if the user is logged in
+ */
+app.get('/auth/user', function(req, res, next) {
+  if (req.isAuthenticated()) {
+    res.status(200);
+    res.json(req.user);
+  } else {
+    res.status(401);
+  }
+});
 };
+

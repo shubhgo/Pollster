@@ -5,13 +5,13 @@
 <div class='col-sm-2'><button class='col-sm-2 btn btn-primary btn-lg btn-block' ng-click='startVoting()'>Votes <span class="badge">{{remaining}}</span></button></div>
 <div class='col-sm-5'></div>
 <div class='col-sm-3'><button type="button" class="btn btn-lg btn-primary btn-block dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-    Shubham Goel <span class="caret"></span>
+    {{name}} <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="#">Profile</a></li>
-    <li><a href="#">Change Password</a></li>
+    <li><a href="#/voterDashboard">Profile</a></li>
+    <li><a href="#/voterDashboard">Change Password</a></li>
     <li class="divider"></li>
-    <li><a href="#">Log Out</a></li>
+    <li><a ng-click='logout()'>Log Out</a></li>
   </ul></div>
 </div>
 <br>
