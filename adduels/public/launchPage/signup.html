@@ -1,29 +1,86 @@
-<h2>Sign Up</h2>
-<form novalidate class="simple-form" role="form">
-<div class="form-group">
-    <label for="name">Name:</label>
-    <input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="credentials.name">
+<div class='row sg-nav-bar'>
+<button class='col-sm-2 btn btn-primary btn-lg' ng-click='home()'>Duels</button>
+<div class='col-sm-10'>
+    <form novalidate class='form-inline' role='form'>
+        <div class='row'>
+            <div class='col-sm-offset-4 col-sm-3'><input type='text' class='form-control input-block input-small' id='username' placeholder='Username' ng-model='cred.username'></div>
+            <div class='col-sm-3'><input type='password' class='form-control input-block' id='password' placeholder='Password' ng-model='cred.password'></div>
+            <button type='submit' class='col-sm-2 btn btn-primary btn-lg' ng-click='signin(cred)'>Log In</button>
+        </div>
+    </form>
 </div>
-<div class="form-group">
-    <label for="username">Username:</label>
-    <input type="text" class="form-control" id="username" placeholder="Enter desired Username" ng-model="credentials.username">
+</div><!-- nav bar end -->
+
+<br>
+
+<div class='row sg-signup-header'>
+    <div class='col-sm-offset-4 col-sm-4' style='text-align:center;'><h1>Sign Up</h1><br><br></div>
+    <div class='col-sm-4'></div>
 </div>
-<div class="form-group">
-    <label for="password">Password:</label>
-    <input type="password" class="form-control" id="password" placeholder="Enter password" ng-model="credentials.password">
+
+<div class='row sg-signup-form'>
+<div class='col-sm-offset-1 col-sm-10' style='text-align:center;'>
+<form novalidate class='simple-form' role='form'>
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='name' style='text-align:right;'>Name:</label>
+    <div class='col-sm-9'><input type='text' class='form-control' id='name' placeholder='Enter name' ng-model='credentials.name'></div>
+    <br>
 </div>
-<div class="form-group">
-    <label for="email">Email:</label>
-    <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="credentials.email">
+<br>
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='username' style='text-align:right;'>Username:</label>
+    <div class='col-sm-9'><input type='text' class='form-control' id='username' placeholder='Enter desired Username' ng-model='credentials.username'></div>
+    <br><br>
 </div>
-<div class="form-group">
-    <label for="role">Role:</label><br>
-    <input type="radio" name="voter" value="voter"  ng-model="credentials.role"> Voter
-    <input type="radio" name="analyst" value="analyst"  ng-model="credentials.role"> Analyst
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='password' style='text-align:right;'>Password:</label>
+    <div class='col-sm-9'><input type='password' class='form-control' id='password' placeholder='Enter password' ng-model='credentials.password'></div>
+    <br><br>
 </div>
-<div class="form-group">
-    <label for="boostID">boostID:</label>
-    <input type="text" class="form-control" id="boostID" placeholder="Enter boostID"  ng-model="credentials.boostID">
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='email' style='text-align:right;'>Email:</label>
+    <div class='col-sm-9'><input type='email' class='form-control' id='email' placeholder='Enter email' ng-model='credentials.email'></div>
+    <br><br>
 </div>
-<button type="submit" class="btn btn-default" ng-click="create(credentials)">Submit</button>
+
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='boostID' style='text-align:right;'>boostID:</label>
+    <div class='col-sm-9'><input type='text' class='form-control' id='boostID' placeholder='Enter boostID'  ng-model='credentials.boostID'></div>
+    <br><br>
+</div>
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='role' style='text-align:right;'>Role:</label>
+    <div class='col-sm-9'><input type='radio' name='voter' value='voter'  ng-model='credentials.role'> Voter
+    <input type='radio' name='analyst' value='analyst'  ng-model='credentials.role'> Analyst</div>
+    <br>
+</div>
+<button type='submit' class='btn btn-default btn-primary' ng-click='create(credentials)'>Submit</button>
 </form>
+<br>
+</div>
+<div class='col-sm-1'></div>
+
+<br>
+</div>
+
+
+<div class='row sg-footer'>
+    <div class='col-sm-4'>2015 © <a class='sg-footer-a' href='http://shubhamgoel.me'>Shubham Goel</a> & <a class='sg-footer-a' href='#'>Xavier Malina </a></div>
+    <div class='col-sm-8'> </div>
+</div>
+<!-- <div class='col-sm-6'>
+    <form novalidate class='form-inline' role='form'>
+    <div class='col-sm-2'><input type='text' class='form-control input-small' id='username' placeholder='Username' ng-model='credentials.username'></div>
+    <div class='col-sm-2'><input type='password' class='form-control' id='password' placeholder='Password' ng-model='credentials.password'></div>
+    <div class='col-sm-1'><button type='submit' class='btn btn-primary taller' ng-click='signin(credentials)'>Log In</button></div>
+    </form>
+</div>
+ --><!-- end of row -->
+<!-- <button class='btn btn-lg btn-primary' ng-click='signup()'>Sign Up</button>
+<button class='btn btn-lg btn-primary' ng-click='login()'>Log In</button>
+
+ -->
+ <br>
+
+
+

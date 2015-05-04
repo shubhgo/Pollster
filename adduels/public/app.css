@@ -4,13 +4,39 @@
   content:url(assets/images/header_r.png);
    /*content:url(http://placehold.it/968x150);*/
 }
-.sg-header {
+.sg-header{
   border-top-right-radius: 10px;
   border-bottom-right-radius: 0px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 0px;
   background-color: #FFFFFF;
   border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left-style: solid;
+  border-width: 1px;
+  border-color: #3BA9D1;
+}
+.sg-signup-header{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 0px;
+  background-color: #FFFFFF;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left-style: solid;
+  border-width: 1px;
+  border-color: #3BA9D1;
+}
+h1.sg-signup-header{
+  text-align: center;
+}
+.sg-signup-form{
+  border-radius: 0px;
+  background-color: #FFFFFF;
+  border-top-style: none;
   border-right-style: solid;
   border-bottom-style: none;
   border-left-style: solid;

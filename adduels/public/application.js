@@ -20,13 +20,13 @@ adDuelsApp.config(['$routeProvider',
 				templateUrl: 'launchPage/launch.html',
 				controller: 'launchCtrl'
 			}).
-			when('/signup', {
-				templateUrl: 'launchPage/signup.html',
-				controller: 'signUpCtrl'
-			}).
 			when('/login', {
 				templateUrl: 'launchPage/login.html',
 				controller: 'logInCtrl'
+			}).
+			when('/signup', {
+				templateUrl: 'launchPage/signup.html',
+				controller: 'signUpCtrl'
 			}).
 			when('/logout', {
 				templateUrl: 'launchPage/logout.html',
