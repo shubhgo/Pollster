@@ -128,7 +128,11 @@ function($scope, $routeParams, $http, $location, duels, ads, Authentication) {
 				    	///todo: replace user id hard coding
 				    	$http.get(baseURL+'/duels/voter/status/running').
 						success(function(data) {
-							$location.url('/duels/'+data[0]);
+                            if (data.length > 0) {
+                                $location.url('/duels/'+data[0]);
+                            } else {
+                                $location.url('/voterDashboard');
+                            }		
 						}).
 						error(function(error) {
 							$scope.status = 'voterDashCtrl: failed to load duels/voter/status/ '+ error.message;

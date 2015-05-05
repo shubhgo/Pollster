@@ -50,8 +50,10 @@ voterDashControllers.controller('voterDashCtrl',['$scope', '$http', '$location',
 		$http.get(baseURL+'/duels/voter/status/running').
 		success(function(data) {
 			$scope.remaining = data.length;
-			$scope.startVoting = function() {
-				$location.url('/duels/'+data[0]);
+			if (data.length > 0) {
+				$scope.startVoting = function() {
+					$location.url('/duels/'+data[0]);
+				};
 			};
 			console.log($scope.authentication.user);
 		}).
