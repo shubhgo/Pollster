@@ -16,11 +16,50 @@
  */
 var duelsControllers = angular.module('duelsControllers', []);
 
-duelsControllers.controller('votingCtrl', ['$scope', '$routeParams', '$http', '$location','duels', 'ads',
-  function($scope, $routeParams, $http, $location, duels, ads) {
+duelsControllers.controller('votingCtrl', ['$scope', '$routeParams', '$http', '$location','duels', 'ads', 'Authentication',
+function($scope, $routeParams, $http, $location, duels, ads, Authentication) {
   	$scope.duel;
   	$scope.adA;
   	$scope.adB;
+
+    $scope.authentication = Authentication;
+    if($scope.authentication.user) {
+        $scope.name = $scope.authentication.user.name;
+    } else {
+        $http.get('/auth/user').
+        success(function(data, status, headers, config) {
+            $scope.authentication.user = data;
+            $scope.name = $scope.authentication.user.name;
+        }).
+        error(function(data, status, headers, config) {
+            errorRedirects(data, status, headers, config, $location);
+        });
+    }
+    $scope.home = function() {
+        $location.path('/voterDashboard');
+    };
+    $scope.logout = function() {
+        $http.get('/auth/signout').
+        success(function(data, status, headers, config) {
+            $scope.authentication = Authentication;
+            $scope.authentication.user = false;
+            $location.path('/loggedout');
+        }).
+        error(function(data, status, headers, config) {
+            errorRedirects(data, status, headers, config, $location);
+        });
+    };
+    $http.get('http://localhost:3000/api/duels/voter/status/running').
+    success(function(data) {
+        $scope.remaining = data.length;
+        $scope.startVoting = function() {
+            $location.url('/duels/'+data[0]);
+        };
+        console.log($scope.authentication.user);
+    }).
+    error(function(data, status, headers, config) {
+        errorRedirects(data, status, headers, config, $location);
+    });
 
   	getDuel($routeParams.duelId);
 
@@ -107,7 +146,7 @@ duelsControllers.controller('votingCtrl', ['$scope', '$routeParams', '$http', '$
     	///todo: update duels table
     	///todo: insert vote details table
     };
-  }]);
+}]);
 
 var duelsFactory = angular.module('duelsFactory', []);
 
