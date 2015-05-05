@@ -142,6 +142,38 @@ h1.sg-signup-header{
 .sg-signup{
   margin:50px 0px 0px 0px;
 }
+.sg-duel-top{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 0px;
+  background-color: #FFFFFF;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left-style: solid;
+  border-width: 1px;
+  border-color: #3BA9D1;
+  background-color: #3476BE;
+  color: white;
+}
+.sg-duel-top > h4{
+  text-align: center;
+}
+.sg-duel-vote > .center-block{
+  text-align: center;
+}
+.sg-duel-vote{
+  border-radius: 0px;
+  background-color: #FFFFFF;
+  border-top-style: none;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left-style: solid;
+  border-width: 1px;
+  border-color: #3BA9D1;
+  padding: 10px;
+}
 input.form-control{
   height:  46px;
   /*font-size: 18px*/

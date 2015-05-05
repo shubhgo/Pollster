@@ -1,12 +1,35 @@
-  <div class="row">
-    <div class="col-sm-12"><p>Keywords:</p><p>{{duel.keywords}}</p></div>
-  </div>
+<div class='row sg-nav-bar'>
+<div class='col-sm-2'><button class='col-sm-2 btn btn-primary btn-lg btn-block' ng-click='home()'>Duels</button></div>
+<div class='col-sm-2'><button class='col-sm-2 btn btn-primary btn-lg btn-block' ng-click='startVoting()'>Votes <span class="badge">{{remaining}}</span></button></div>
+<div class='col-sm-5'></div>
+<div class='col-sm-3'><button type="button" class="btn btn-lg btn-primary btn-block dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    {{name}} <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#/voterDashboard">Profile</a></li>
+    <li><a href="#/voterDashboard">Change Password</a></li>
+    <li class="divider"></li>
+    <li><a ng-click='logout()'>Log Out</a></li>
+  </ul></div>
+</div>
+<br>
+<div class='row sg-duel-top'>
+<!-- <div class=''> -->
+<h4>Which version of this Ad will recieve the most clicks?</h4>
+</div>
 
-<div class="row">
-<div class="col-sm-6">
+<div class='row sg-duel-vote'>
+<!-- 3-6-3 -->
+<div class='col-sm-12 center-block'><h4>Keywords: <span class="label label-warning">{{duel.keywords}}</span></h4></div>
+<!-- <div class='col-sm-3'></div> -->
+</div>
+
+<div class='row sg-duel-vote'>
+<!-- 6-6 -->
+<div class='col-sm-6'>
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-              <h3 class="panel-title">Ad A</h3>
+              <h3 class="panel-title">Version A</h3>
 	    </div>
 	  	<div class="panel-body">
 	  		<a href="{{adA.destinationURL}}">{{adA.title}}</a>
@@ -16,10 +39,10 @@
 	  	</div>
 	</div>
 </div>
-<div class="col-sm-6">
+<div class='col-sm-6'>
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-              <h3 class="panel-title">Ad B</h3>
+              <h3 class="panel-title">Version B</h3>
 	    </div>
 	  	<div class="panel-body">
 	  		<a href="{{adA.destinationURL}}">{{adB.title}}</a>
@@ -30,14 +53,23 @@
 	</div>
 </div>
 </div>
-<div class="row">
-<div class="col-sm-6"><button ng-click="next('VoteAdA')" class="btn btn-lg btn-primary">AdA</button></div>
-<div class="col-sm-6"><button ng-click="next('VoteAdB')" class="btn btn-lg btn-primary">AdB</button></div>
 
+<div class='row sg-duel-vote'>
+<!-- 4-4-4 -->
+<div class='col-sm-4'><button ng-click="next('VoteAdA')" class="btn center-block btn-lg btn-primary">Version A</button></div>
+<div class='col-sm-4'><button ng-click="next('equal')" class="btn center-block btn-lg btn-primary">About the Same</button></div>
+<div class='col-sm-4'><button ng-click="next('VoteAdB')" class="btn center-block btn-lg btn-primary">Version B</button></div>
 </div>
-<br>
-<div class="row">
-<div class="col-sm-6"><button ng-click="next('equal')" class="btn btn-lg btn-primary">About the Same</button></div>
 
-	<div class="col-sm-6"><button ng-click="next('skip')" class="btn btn-lg btn-primary">Skip>></button></div>
+<div class='row sg-duel-vote'>
+<!-- 9-3 -->
+<div class='col-sm-offset-10 col-sm-2'><button ng-click="next('skip')" class="btn center-block btn-lg btn-primary">Skip>></button></div>
+</div>
+
+
+
+<div class='row sg-footer'>
+    <div class='col-sm-12'>
+    	<p> 2015 © <a class='sg-footer-a' href='http://shubhamgoel.me'>Shubham Goel</a> & <a class='sg-footer-a' href='#'>Xavier Malina </a></p>
+    </div>
 </div>

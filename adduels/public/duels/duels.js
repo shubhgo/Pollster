@@ -1,7 +1,19 @@
 'use strict'
 
 /* Duels voting page controller and duel services */
-
+/*
+ * $scope
+ * home()
+ * startVoting()
+ * remaining
+ * name
+ * logout()
+ * duel.keywords
+ * adA.title
+ * adA.displayURL
+ * adA.line2
+ * next()[VoteAdA, equal, VoteAdB, skip]
+ */
 var duelsControllers = angular.module('duelsControllers', []);
 
 duelsControllers.controller('votingCtrl', ['$scope', '$routeParams', '$http', '$location','duels', 'ads',
