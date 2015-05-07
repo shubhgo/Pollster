@@ -3,11 +3,11 @@
 <div class='col-sm-4 text-center'>
 <button class='btn btn-lg sg-nav-btn' ng-click='home()'><i class='fa fa-home'></i></button>
 <button class='btn btn-lg sg-nav-btn' ng-click='startVoting()'>
-	<i class='fa fa-check-square'></i><span class='badge'>{{remaining}}</span>
+	<i class='fa fa-check-square'></i><span class='badge sg-nav-badge'>{{remaining}}</span>
 	</button>
 <button type="button" class='btn btn-lg sg-nav-btn dropdown-toggle' data-toggle='dropdown' aria-expanded='false'><i class='fa fa-user'></i></button>
-<ul class='dropdown-menu' role='menu'>
-	<li>{{name}}</li>
+<ul class='dropdown-menu pull-right' role='menu'>
+	<li><a>{{name}}</a> </li>
 	<li class="divider"></li>
     <li><a href="#/voterDashboard">Profile</a></li>
     <li><a href="#/voterDashboard">Change Password</a></li>
@@ -15,7 +15,7 @@
 </ul>
 </div>
 <div class='col-sm-4'></div>
-</div>
+</div><!-- end nav bar -->
 <br>
 <div class='row sg-voterdash-top'>
 <!-- <div class=''> -->

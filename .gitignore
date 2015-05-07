@@ -58,3 +58,4 @@ public/lib
 app/tests/coverage/
 .bower-*/
 .idea/
+/adduels/public/app.min.css
