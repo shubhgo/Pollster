@@ -53,7 +53,6 @@ adDuelsApp.config(['$routeProvider',
 				controller: 'analystDashCtrl'
 			}).
 			otherwise({
-				///fixit: asap remove hard coding
 				redirectTo: '/launch'
 			});
 }]);

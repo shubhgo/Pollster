@@ -18,6 +18,24 @@ a {
 }
 .btn-primary {
   background-color: #45cb85;
+  border-color: #45cb85;
+}
+.sg-nav-bar-center {
+  background-color: #45cb85;
+}
+.sg-nav-btn {
+  background-color: transparent;
+  font-size: 36px;
+  border-style: none;
+  color: #ffffff;
+}
+.sg-nav-btn:hover {
+  background-color: #45cb85;
+  color: #ffffff;
+}
+.sg-nav-btn:active {
+  background-color: #45cb85;
+  color: #ffffff;
 }
 .sg-header:before {
   /*content:url(http://placehold.it/968x150);*/
@@ -36,10 +54,7 @@ a {
   border-color: #252323;
 }
 .sg-voterdash-top {
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 0px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 0px;
+  border-radius: 2px;
   background-color: #FFFFFF;
   border-top-style: solid;
   border-right-style: solid;
@@ -77,7 +92,9 @@ p.sg-voterdash-underline {
   margin-bottom: 0px;
 }
 .sg-voterdash {
+  border-radius: 2px;
   margin-bottom: 0px;
+  border-color: #252323;
 }
 .sg-voterdash-totalvotes {
   color: white;
@@ -94,15 +111,18 @@ p.sg-voterdash-underline {
 .sg-vote-widget {
   padding: 10px;
 }
+.sg-vote-table {
+  padding: 10px;
+}
 /*.sg-vote-widget-last{
   padding-right: 5px;
 }
 */
 .sg-vote {
-  color: white;
+  color: #252323;
 }
 .sg-vote:hover {
-  color: white;
+  color: #252323;
 }
 .sg-signup-header {
   border-top-right-radius: 10px;
@@ -215,6 +235,7 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #252323;
+  background-image: url("/assets/images/background.png");
 }
 .border {
   border-style: solid;
