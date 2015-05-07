@@ -1,34 +1,27 @@
 <div class='row sg-nav-bar'>
 <div class='col-sm-4'></div>
 <div class='col-sm-4 text-center'>
-
-	<button class='btn btn-lg sg-nav-btn' ng-click='home()'><i class="fa fa-home"></i></button>
-<button class='btn btn-lg sg-nav-btn' ng-click='home()'><i class="fa fa-check-square"></i></button>
-<button class='btn btn-lg sg-nav-btn' ng-click='home()'><i class="fa fa-user"></i></button>
-
-</div>
-<div class='col-sm-4'></div>
-
-</div>
-<br>
-<!-- <button class='col-sm-2 btn btn-primary btn-lg btn-block' ng-click='home()'>Duels</button></div>
-<div class='col-sm-2'><button class='col-sm-2 btn btn-primary btn-lg btn-block' ng-click='startVoting()'>Votes <span class="badge">{{remaining}}</span></button></div>
-<div class='col-sm-5'></div>
-<div class='col-sm-3'><button type="button" class="btn btn-lg btn-primary btn-block dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-    {{name}} <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
+<button class='btn btn-lg sg-nav-btn' ng-click='home()'><i class='fa fa-home'></i></button>
+<button class='btn btn-lg sg-nav-btn' ng-click='startVoting()'>
+	<i class='fa fa-check-square'></i><span class='badge'>{{remaining}}</span>
+	</button>
+<button type="button" class='btn btn-lg sg-nav-btn dropdown-toggle' data-toggle='dropdown' aria-expanded='false'><i class='fa fa-user'></i></button>
+<ul class='dropdown-menu' role='menu'>
+	<li>{{name}}</li>
+	<li class="divider"></li>
     <li><a href="#/voterDashboard">Profile</a></li>
     <li><a href="#/voterDashboard">Change Password</a></li>
-    <li class="divider"></li>
     <li><a ng-click='logout()'>Log Out</a></li>
-  </ul></div>
- -->
+</ul>
+</div>
+<div class='col-sm-4'></div>
+</div>
+<br>
 <div class='row sg-voterdash-top'>
 <!-- <div class=''> -->
  	<div class='col-sm-12 sg-vote-table'>
-		<div class="panel panel-default sg-voterdash">
-		<div class="panel-body">
+		<div class='panel panel-default sg-voterdash'>
+		<div class='panel-body'>
 	 		<h2 class='sg-voterdash-underline'>78%</h2>
 	 		<p class='sg-voterdash-underline'>Wins</p>
 	 		<br>
@@ -48,24 +41,24 @@
 		</div>
  	</div>
     <div class='col-sm-4 sg-vote-widget'>
-		<div class="panel panel-default sg-voterdash" ng-click='startVoting()'>
-		<div class="panel-body">
+		<div class='panel panel-default sg-voterdash' ng-click='startVoting()'>
+		<div class='panel-body'>
 			<h2 class='sg-voterdash-underline'>{{remaining}}</h2>
 			<p class='sg-voterdash-underline'><a class='sg-vote' ng-click='startVoting()'>Vote Now</a></p>
 		</div>
 		</div>
     </div>
     <div class='col-sm-4 sg-vote-widget'>
-		<div class="panel panel-default sg-voterdash">
-		<div class="panel-body">
+		<div class='panel panel-default sg-voterdash'>
+		<div class='panel-body'>
 	    	<h2 class='sg-voterdash-underline'>132</h2>
 	    	<p class='sg-voterdash-underline'>Votes casted</p>
 		</div>
 		</div>
     </div>
     <div class='col-sm-4 sg-vote-widget sg-vote-widget-last'>
-		<div class="panel panel-default sg-voterdash">
-		<div class="panel-body">
+		<div class='panel panel-default sg-voterdash'>
+		<div class='panel-body'>
 	    	<h2 class='sg-voterdash-underline'>$140.50</h2>
 	    	<p class='sg-voterdash-underline'>Total Earnings</p>
 		</div>

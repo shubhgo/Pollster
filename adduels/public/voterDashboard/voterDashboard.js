@@ -55,7 +55,7 @@ voterDashControllers.controller('voterDashCtrl',['$scope', '$http', '$location',
 					$location.url('/duels/'+data[0]);
 				};
 			};
-			console.log($scope.authentication.user);
+			// console.log($scope.authentication.user);
 		}).
 		error(function(data, status, headers, config) {
 			errorRedirects(data, status, headers, config, $location);
