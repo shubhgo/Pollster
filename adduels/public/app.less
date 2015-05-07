@@ -1,41 +1,47 @@
+
+@sgBlack:#252323;
+@sgWhite:#ffffff;
+@sgGreen:#45CB85;
+@sgBlue:#39A9DB;
+@sgYellow:#F0AD35;
+
+
+@bodybackground:@sgBlack;
+@footer:@sgWhite;
+// old body color: #E2E5E6
+
 /* app css stylesheet */
 @import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
 @import url(http://fonts.googleapis.com/css?family=Raleway:800,400,300);
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-button {
+h1, h2, h3, h4, h5, h6, button {
   font-family: 'Bitter', serif;
-  color: #252323;
+  color:@sgBlack;
 }
-p,
-div,
-a {
+p, div, a {
   font-family: 'Raleway', sans-serif;
 }
-.btn-primary {
-  background-color: #45cb85;
+.btn-primary{
+  background-color: @sgGreen;
 }
 .sg-header:before {
-  /*content:url(http://placehold.it/968x150);*/
+  // content:url(assets/images/header_r.png);
+  // opacity: 0.1;
+   /*content:url(http://placehold.it/968x150);*/
 }
-.sg-header {
+.sg-header{
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
-  background-color: #ffffff;
+  background-color: @sgWhite;
   border-top-style: solid;
   border-right-style: solid;
   border-bottom-style: none;
   border-left-style: solid;
   border-width: 1px;
-  border-color: #252323;
+  border-color: @sgBlack;
 }
-.sg-voterdash-top {
+.sg-voterdash-top{
   border-top-right-radius: 10px;
   border-bottom-right-radius: 0px;
   border-top-left-radius: 10px;
@@ -46,10 +52,10 @@ a {
   border-bottom-style: none;
   border-left-style: solid;
   border-width: 1px;
-  border-color: #252323;
+  border-color: @sgBlack;
   padding: 10px;
 }
-.sg-voterdash-middle {
+.sg-voterdash-middle{
   border-radius: 0px;
   background-color: #FFFFFF;
   border-top-style: none;
@@ -57,15 +63,15 @@ a {
   border-bottom-style: none;
   border-left-style: solid;
   border-width: 1px;
-  border-color: #252323;
+  border-color: @sgBlack;
   padding: 10px;
 }
-.sg-voterdash-votenow {
+.sg-voterdash-votenow{
   color: white;
-  background-color: #1A9172;
-  cursor: pointer;
+  background-color:#1A9172;
+  cursor:pointer;
 }
-p.sg-voterdash-underline {
+p.sg-voterdash-underline{
   text-decoration: none;
   font-size: 20px;
   font-weight: lighter;
@@ -74,37 +80,36 @@ p.sg-voterdash-underline {
   text-decoration: underline;
   font-weight: bold;
   font-size: 48px;
+  margin-bottom: 0px; 
+}
+.sg-voterdash{
   margin-bottom: 0px;
 }
-.sg-voterdash {
-  margin-bottom: 0px;
-}
-.sg-voterdash-totalvotes {
+.sg-voterdash-totalvotes{
   color: white;
-  background-color: #d6455c;
+  background-color:#D6455C
 }
-.sg-voterdash-totalearnings {
+.sg-voterdash-totalearnings{
   color: white;
-  background-color: #45cb85;
+  background-color:@sgGreen
 }
-.sg-voterdash-wins {
+.sg-voterdash-wins{
   color: white;
-  background-color: #303c4f;
+  background-color:#303C4F
 }
-.sg-vote-widget {
+.sg-vote-widget{
   padding: 10px;
 }
 /*.sg-vote-widget-last{
   padding-right: 5px;
 }
-*/
-.sg-vote {
+*/.sg-vote {
   color: white;
 }
-.sg-vote:hover {
+.sg-vote:hover{
   color: white;
 }
-.sg-signup-header {
+.sg-signup-header{
   border-top-right-radius: 10px;
   border-bottom-right-radius: 0px;
   border-top-left-radius: 10px;
@@ -115,12 +120,12 @@ p.sg-voterdash-underline {
   border-bottom-style: none;
   border-left-style: solid;
   border-width: 1px;
-  border-color: #252323;
+  border-color: @sgBlack;
 }
-h1.sg-signup-header {
+h1.sg-signup-header{
   text-align: center;
 }
-.sg-signup-form {
+.sg-signup-form{
   border-radius: 0px;
   background-color: #FFFFFF;
   border-top-style: none;
@@ -128,9 +133,9 @@ h1.sg-signup-header {
   border-bottom-style: none;
   border-left-style: solid;
   border-width: 1px;
-  border-color: #252323;
+  border-color: @sgBlack;
 }
-.sg-features {
+.sg-features{
   border-radius: 0px;
   background-color: #FFFFFF;
   border-top-style: none;
@@ -138,40 +143,38 @@ h1.sg-signup-header {
   border-bottom-style: solid;
   border-left-style: solid;
   border-width: 1px;
-  border-color: #252323;
+  border-color: @sgBlack;
 }
-.sg-footer {
-  /*  border-top-right-radius: 0px;
+.sg-footer{
+/*  border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
-*/
-  /*color: white;*/
+*/  /*color: white;*/
   /*background-color: gray;*/
-  /*  border-style: solid;
+/*  border-style: solid;
   border-width: 1px;
   border-color: #3EAAD1;
-*/
-  padding-top: 10px;
-  padding-bottom: 40px;
+*/  padding-top: 10px;
+padding-bottom: 40px;
   margin-top: 20px;
-  color: #ffffff;
+  color: @footer;
   opacity: 0.30;
 }
-.sg-footer:hover {
+.sg-footer:hover{
   /*color: black;*/
   opacity: 1.00;
 }
-.sg-footer-a {
-  color: #ffffff;
+.sg-footer-a{
+  color: @footer;
 }
-.sg-footer-a:hover {
-  color: #ffffff;
+.sg-footer-a:hover{
+  color: @footer;
 }
-.sg-signup {
-  margin: 50px 0px 0px 0px;
+.sg-signup{
+  margin:50px 0px 0px 0px;
 }
-.sg-duel-top {
+.sg-duel-top{
   border-top-right-radius: 10px;
   border-bottom-right-radius: 0px;
   border-top-left-radius: 10px;
@@ -182,17 +185,17 @@ h1.sg-signup-header {
   border-bottom-style: none;
   border-left-style: solid;
   border-width: 1px;
-  border-color: #252323;
+  border-color: @sgBlack;
   background-color: #3476BE;
   color: white;
 }
-.sg-duel-top > h4 {
+.sg-duel-top > h4{
   text-align: center;
 }
-.sg-duel-vote > .center-block {
+.sg-duel-vote > .center-block{
   text-align: center;
 }
-.sg-duel-vote {
+.sg-duel-vote{
   border-radius: 0px;
   background-color: #FFFFFF;
   border-top-style: none;
@@ -200,49 +203,57 @@ h1.sg-signup-header {
   border-bottom-style: none;
   border-left-style: solid;
   border-width: 1px;
-  border-color: #252323;
+  border-color: @sgBlack;
   padding: 10px;
 }
-input.form-control {
-  height: 46px;
+input.form-control{
+  height:  46px;
   /*font-size: 18px*/
 }
 button.taller {
   height: 46px;
   /*font-size: 18px;*/
 }
-body {
+body{
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #252323;
+  background-color: @bodybackground;
 }
 .border {
   border-style: solid;
   border-width: 1px;
   border-color: red;
 }
-.form-inline .form-control .navbar {
+.form-inline .form-control
+
+.navbar {
   margin-bottom: 20px;
 }
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
   margin-bottom: 2em;
   padding: 0 0 0.5em;
 }
+
 .menu:before {
   content: "[";
 }
+
 .menu:after {
   content: "]";
 }
+
 .menu > li {
   display: inline;
 }
+
 .menu > li:before {
   content: "|";
   padding-right: 0.3em;
 }
+
 .menu > li:nth-child(1):before {
   content: "";
   padding: 0;
