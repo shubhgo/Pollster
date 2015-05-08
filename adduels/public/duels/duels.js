@@ -19,8 +19,8 @@ var duelsControllers = angular.module('duelsControllers', []);
 duelsControllers.controller('votingCtrl', ['$scope', '$routeParams', '$http', '$location','duels', 'ads', 'Authentication',
 function($scope, $routeParams, $http, $location, duels, ads, Authentication) {
   	$scope.duel;
-  	$scope.adA;
-  	$scope.adB;
+  	$scope.adA = {title:'__',displayURL:'__',line1:'__',line2:'__'};
+  	$scope.adB = {title:'__',displayURL:'__',line1:'__',line2:'__'};
 
     $scope.authentication = Authentication;
     if($scope.authentication.user) {

@@ -19,56 +19,88 @@
 
 <br>
 <div class='row sg-duel-top'>
-<!-- <div class=''> -->
-<h4>Which version of this Ad will recieve the most clicks?</h4>
+<div class='col-sm-3'>
+	<h3>Boost Media Campaign
+	<a type="button" class="sf-duel-top-link" data-toggle="modal" data-target="#campaignModal"><i class="fa fa-info-circle"></i></a>
+	</h3>
+</div>
+<div class='col-sm-offset-5 col-sm-2 sg-duel-top-widgets'>
+	<h3>$12.50</h3>
+	<p>Earning</p>
+</div>
+<div class='col-sm-2 sg-duel-top-widgets'>
+	<h3>23</h3>
+	<p>Attempted</p>
+</div>
+</div>
+<!-- Keywords -->
+<div class='row sg-duel-vote'>
+<!-- 3-9 -->
+<br>
+<div class='col-sm-3'>
+	<p>The user types the following into a search engine:</p>
 </div>
 
-<div class='row sg-duel-vote'>
-<!-- 3-6-3 -->
-<div class='col-sm-12 center-block'><h4>Keywords: <span class="label label-warning">{{duel.keywords}}</span></h4></div>
-<!-- <div class='col-sm-3'></div> -->
+<div class='col-sm-9'>
+
+	 <span class="label  sg-key-word">rose red</span>
+        <span class="label  sg-key-word">love roses</span>
+     <span class="label  sg-key-word">glass roses flowers</span>
+
 </div>
+</div>
+
+<!-- 
+        <li ng-repeat="todo in todoList.todos">
+          <input type="checkbox" ng-model="todo.done">
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+{{duel.keywords}}
+ -->
 
 <div class='row sg-duel-vote'>
 <!-- 6-6 -->
-<div class='col-sm-6'>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-              <h3 class="panel-title">Version A</h3>
-	    </div>
-	  	<div class="panel-body">
+<div class='col-sm-5 col-xs-5 sg-duel-adcontainer' ng-click="next('VoteAdA')">
+	<div class='col-sm-1 col-xs-2 sg-duel-chevron'>
+		<h4><i class="fa fa-chevron-right"></i></h4>
+	</div>
+	<div class='col-sm-11 col-xs-10 sg-duel-adbox sg-duel-adbox-left'>
 	  		<a href="{{adA.destinationURL}}">{{adA.title}}</a>
 	  		<p>{{adA.displayURL}}<br>
 	  		{{adA.line1}}<br>
 	  		{{adA.line2}}</p>
-	  	</div>
+
 	</div>
 </div>
-<div class='col-sm-6'>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-              <h3 class="panel-title">Version B</h3>
-	    </div>
-	  	<div class="panel-body">
+<div class='col-sm-2 col-xs-2'>
+	<div class='sg-duel-chevron sg-duel-chevron-tie' ng-click="next('equal')">
+	<div class='sg-duel-tie'>
+		<h4 class='sg-duel-tie-h4'><i class="fa fa-chevron-right"></i><i class="fa fa-chevron-left"></i></h4>
+	</div>
+	<p>Tie</p>
+	</div>
+
+</div>
+<div class='col-sm-5 col-xs-5 sg-duel-adcontainer' ng-click="next('VoteAdB')">
+	<div class='col-sm-11 col-xs-10 sg-duel-adbox sg-duel-adbox-right'>
 	  		<a href="{{adA.destinationURL}}">{{adB.title}}</a>
 	  		<p>{{adB.displayURL}}<br>
 	  		{{adB.line1}}<br>
 	  		{{adB.line2}}</p>
-  		</div>
+
 	</div>
+		<div class='col-sm-1 col-xs-2 sg-duel-chevron'>
+		<h4><i class="fa fa-chevron-left"></i></h4>
+	</div>
+
 </div>
 </div>
 
-<div class='row sg-duel-vote'>
-<!-- 4-4-4 -->
-<div class='col-sm-4'><button ng-click="next('VoteAdA')" class="btn center-block btn-lg btn-primary">Version A</button></div>
-<div class='col-sm-4'><button ng-click="next('equal')" class="btn center-block btn-lg btn-primary">About the Same</button></div>
-<div class='col-sm-4'><button ng-click="next('VoteAdB')" class="btn center-block btn-lg btn-primary">Version B</button></div>
+<div class='row sg-duel-vote sg-duel-vote-last'>
+<br>
 </div>
-
-<div class='row sg-duel-vote'>
-<!-- 9-3 -->
-<div class='col-sm-offset-10 col-sm-2'><button ng-click="next('skip')" class="btn center-block btn-lg btn-primary">Skip>></button></div>
+<div class='row'>
+<div class='col-sm-offset-5 col-sm-2'><button ng-click="next('skip')" class="btn center-block btn-block btn-lg sg-btn-skip">Skip</button></div>
 </div>
 
 
@@ -77,4 +109,19 @@
     <div class='col-sm-12'>
     	<p> 2015 © <a class='sg-footer-a' href='http://shubhamgoel.me'>Shubham Goel</a> & <a class='sg-footer-a' href='#'>Xavier Malina </a></p>
     </div>
+</div>
+
+<!-- About Campaign Modal -->
+<div class="modal fade" id="campaignModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">About the Campaign</h4>
+      </div>
+      <div class="modal-body">
+---
+      </div>
+    </div>
+  </div>
 </div>
