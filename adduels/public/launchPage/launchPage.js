@@ -15,12 +15,9 @@ launchControllers.controller('launchCtrl',['$scope', '$http', '$location', 'Auth
 		};
 
 		$scope.home = function() {
-			$location.path('/launch');
+			$location.path('/');
 		};
 
-		$scope.signup = function() {
-			$location.path('/signup');
-		};
 		$scope.create = function(credentials) {
 			$http.post('/auth/signup', credentials).success(function(response) {
 				// was already signin
@@ -49,52 +46,16 @@ launchControllers.controller('launchCtrl',['$scope', '$http', '$location', 'Auth
 		};
 }]);
 
-launchControllers.controller('signUpCtrl',['$scope', '$http', '$location', 'Authentication',
-	function($scope, $http, $location, Authentication) {
-		$scope.authentication = Authentication;
-		// If user is signed in then redirect back home
-		///todo: add check if voter or analyst
-		if ($scope.authentication.user) $location.path('/voterDashboard');
-
-		$scope.home = function() {
-			$location.path('/launch')
-		};
-
-		$scope.signin = function(credentials) {
-			$http.post('/auth/signin', credentials).success(function(response) {
-				// If successful we assign the response to the global user model
-				$scope.authentication.user = response;
-
-				// And redirect to the index page
-				$location.path('/voterDashboard');
-			}).error(function(data, status, headers, config) {
-				errorRedirects(data, status, headers, config, $location);
-			});
-		};
-
-
-		$scope.create = function(credentials) {
-			$http.post('/auth/signup', credentials).success(function(response) {
-				// was already signin
-				if (Number(response) == 200) $location.path('/voterDashboard');
-				
-				// If successful we assign the response to the global user model
-				$scope.authentication.user = response;
-
-				// And redirect to the index page
-				$location.path('/voterDashboard');
-			}).error(function(data, status, headers, config) {
-				errorRedirects(data, status, headers, config, $location);
-			});
-		};
-}]);
-
-// launchControllers.controller('logInCtrl',['$scope', '$http', '$location', 'Authentication',
+// launchControllers.controller('signUpCtrl',['$scope', '$http', '$location', 'Authentication',
 // 	function($scope, $http, $location, Authentication) {
 // 		$scope.authentication = Authentication;
 // 		// If user is signed in then redirect back home
 // 		///todo: add check if voter or analyst
 // 		if ($scope.authentication.user) $location.path('/voterDashboard');
+
+// 		$scope.home = function() {
+// 			$location.path('/launch')
+// 		};
 
 // 		$scope.signin = function(credentials) {
 // 			$http.post('/auth/signin', credentials).success(function(response) {
@@ -107,23 +68,59 @@ launchControllers.controller('signUpCtrl',['$scope', '$http', '$location', 'Auth
 // 				errorRedirects(data, status, headers, config, $location);
 // 			});
 // 		};
+
+
+// 		$scope.create = function(credentials) {
+// 			$http.post('/auth/signup', credentials).success(function(response) {
+// 				// was already signin
+// 				if (Number(response) == 200) $location.path('/voterDashboard');
+				
+// 				// If successful we assign the response to the global user model
+// 				$scope.authentication.user = response;
+
+// 				// And redirect to the index page
+// 				$location.path('/voterDashboard');
+// 			}).error(function(data, status, headers, config) {
+// 				errorRedirects(data, status, headers, config, $location);
+// 			});
+// 		};
 // }]);
 
-
-launchControllers.controller('logOutCtrl', ['$scope', '$http', '$location', 'Authentication',
+launchControllers.controller('logInCtrl',['$scope', '$http', '$location', 'Authentication',
 	function($scope, $http, $location, Authentication) {
-		$scope.logout = function() {
-			$http.get('/auth/signout').
-			success(function(data, status, headers, config) {
-				$scope.authentication = Authentication;
-				$scope.authentication.user = false;
-				$location.path('/loggedout');
-			}).
-			error(function(data, status, headers, config) {
+		$scope.authentication = Authentication;
+		// If user is signed in then redirect back home
+		///todo: add check if voter or analyst
+		if ($scope.authentication.user) $location.path('/voterDashboard');
+
+		$scope.signin = function(credentials) {
+			$http.post('/auth/signin', credentials).success(function(response) {
+				// If successful we assign the response to the global user model
+				$scope.authentication.user = response;
+
+				// And redirect to the index page
+				$location.path('/voterDashboard');
+			}).error(function(data, status, headers, config) {
 				errorRedirects(data, status, headers, config, $location);
 			});
 		};
 }]);
+
+
+// launchControllers.controller('logOutCtrl', ['$scope', '$http', '$location', 'Authentication',
+// 	function($scope, $http, $location, Authentication) {
+// 		$scope.logout = function() {
+// 			$http.get('/auth/signout').
+// 			success(function(data, status, headers, config) {
+// 				$scope.authentication = Authentication;
+// 				$scope.authentication.user = false;
+// 				$location.path('/loggedout');
+// 			}).
+// 			error(function(data, status, headers, config) {
+// 				errorRedirects(data, status, headers, config, $location);
+// 			});
+// 		};
+// }]);
 
 launchControllers.controller('fourOthreeCtrl', [,
 	function() {

@@ -35,7 +35,7 @@ voterDashControllers.controller('voterDashCtrl',['$scope', '$http', '$location',
 			success(function(data, status, headers, config) {
 				$scope.authentication = Authentication;
 				$scope.authentication.user = false;
-				$location.path('/loggedout');
+				$location.path('/login');
 			}).
 			error(function(data, status, headers, config) {
 				errorRedirects(data, status, headers, config, $location);

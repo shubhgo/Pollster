@@ -1,3 +1,22 @@
+<div class='row sg-nav-bar'>
+<div class='col-sm-4'></div>
+<div class='col-sm-4 text-center'>
+<button class='btn btn-lg sg-nav-btn' ng-click='home()'><i class='fa fa-home'></i></button>
+<button class='btn btn-lg sg-nav-btn' ng-click='startVoting()'>
+	<i class='fa fa-check-square'></i><span class='badge sg-nav-badge'>{{remaining}}</span>
+	</button>
+<button type="button" class='btn btn-lg sg-nav-btn dropdown-toggle' data-toggle='dropdown' aria-expanded='false'><i class='fa fa-user'></i></button>
+<ul class='dropdown-menu pull-right' role='menu'>
+	<li><a>{{name}}</a> </li>
+	<li class="divider"></li>
+    <li><a href="#/voterDashboard">Profile</a></li>
+    <li><a href="#/voterDashboard">Change Password</a></li>
+    <li><a ng-click='logout()'>Log Out</a></li>
+</ul>
+</div>
+<div class='col-sm-4'></div>
+</div><!-- end nav bar -->
+<br>
 <p>You are logged out sir!!</p>
 <p>Knock Knock!</p>
 <p>Who is there?</p>

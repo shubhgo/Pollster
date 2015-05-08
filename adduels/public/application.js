@@ -24,18 +24,6 @@ adDuelsApp.config(['$routeProvider',
 				templateUrl: 'launchPage/login.html',
 				controller: 'logInCtrl'
 			}).
-			when('/signup', {
-				templateUrl: 'launchPage/signup.html',
-				controller: 'signUpCtrl'
-			}).
-			when('/logout', {
-				templateUrl: 'launchPage/logout.html',
-				controller: 'logOutCtrl'
-			}).
-			when('/loggedout', {
-				templateUrl: 'launchPage/loggedout.html',
-				controller: 'logOutCtrl'
-			}).
 			when('/fourOthree', {
 				templateUrl: 'launchPage/fourOthree.html',
 				controller: 'fourOthreeCtrl'
@@ -57,3 +45,16 @@ adDuelsApp.config(['$routeProvider',
 			});
 }]);
 // duels/553aa213beba92d6034594c6
+
+			// when('/signup', {
+			// 	templateUrl: 'launchPage/signup.html',
+			// 	controller: 'signUpCtrl'
+			// }).
+			// when('/logout', {
+			// 	templateUrl: 'launchPage/logout.html',
+			// 	controller: 'logOutCtrl'
+			// }).
+			// when('/loggedout', {
+			// 	templateUrl: 'launchPage/loggedout.html',
+			// 	controller: 'logOutCtrl'
+			// }).
