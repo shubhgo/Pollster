@@ -16,7 +16,7 @@ var adDuelsApp = angular.module('adduels', [
 adDuelsApp.config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider.
-			when('/launch', {
+			when('/', {
 				templateUrl: 'launchPage/launch.html',
 				controller: 'launchCtrl'
 			}).
@@ -53,7 +53,7 @@ adDuelsApp.config(['$routeProvider',
 				controller: 'analystDashCtrl'
 			}).
 			otherwise({
-				redirectTo: '/launch'
+				redirectTo: '/'
 			});
 }]);
 // duels/553aa213beba92d6034594c6

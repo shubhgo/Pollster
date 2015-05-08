@@ -55,6 +55,54 @@ p, div, a {
   top: -25px;
   left: -8px; 
 }
+.sg-btn{
+  color: @sgGreen;
+  border-color: @sgGreen;
+  background-color: transparent;
+}
+.sg-btn:hover, .sg-btn:focus, .sg-btn:active, .sg-btn.active {
+    color: darken(@sgGreen, 20%);
+    border-color: darken(@sgGreen, 20%);
+    background: transparent;
+}
+// .sg-btn:active, .sg-btn.active {
+//     color: @sgGreen;
+//     border-color: @sgGreen;
+//     box-shadow: none;
+// }
+
+// .sg-btn {
+  //   background:none!important;
+//   border:none; 
+//   padding:0!important;
+//   font: inherit;
+//   /*border is optional*/
+//   border-bottom:1px solid #444; 
+//   cursor: pointer;
+//   padding: 3px 20px;
+//   margin: 3px 20px;
+//   text-decoration: none;
+
+// }
+// button.sf-nav-btn-link {
+//   background:none!important;
+//   border:none; 
+//   padding:0!important;
+//   font: inherit;
+//   /*border is optional*/
+//   border-bottom:1px solid #444; 
+//   cursor: pointer;
+//   padding: 3px 20px;
+//   margin: 3px 20px;
+//   text-decoration: none;
+// }
+// button.sf-nav-btn-link:hover {
+//   background-color: #f5f5f5;
+// }
+// button.sf-nav-btn-link <li:hover {
+//   background-color: #f5f5f5;
+// }
+
 // .sg-nav-btn:hover {
 //   background-color: @sgGreen;
 //   color: @sgWhite;
@@ -223,22 +271,25 @@ padding-bottom: 40px;
   margin:50px 0px 0px 0px;
 }
 .sg-duel-top{
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 0px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 0px;
-  background-color: #FFFFFF;
-  border-top-style: solid;
-  border-right-style: solid;
-  border-bottom-style: none;
-  border-left-style: solid;
+  background-color: @sgWhite;
+  border-radius: 2px;
+  border-style: solid;
   border-width: 1px;
   border-color: @sgBlack;
-  background-color: #3476BE;
-  color: white;
+  color: @sgBlack;
 }
 .sg-duel-top > h4{
   text-align: center;
+}
+.sg-duel-top-widgets {
+  border-color: @sgBlack;
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: solid;
+
+  // border-style: solid;
+  border-width: 1px; 
 }
 .sg-duel-vote > .center-block{
   text-align: center;
@@ -254,6 +305,33 @@ padding-bottom: 40px;
   border-color: @sgBlack;
   padding: 10px;
 }
+.sg-keyword-field {
+  float:left; 
+  width:auto; 
+  height:40px; 
+  line-height:27px;
+  text-indent:10px; 
+  font-family:arial, sans-serif; 
+  font-size:1em; 
+  color:#333; 
+  background: #fff; 
+  border:solid 1px #d9d9d9; 
+  border-top:solid 1px #c0c0c0; 
+  /* border-right:none; */
+}
+
+/* Style the "X" text button next to the search input field */
+.sg-key-word {
+  color: black;
+  background-color: tranparent;  
+  /* border:solid 1px #d9d9d9; */ 
+  border:solid 1px #c0c0c0; 
+  border-radius: 1px;
+  font-size: 18px;
+    /* padding: 2px; */
+  margin-top: 4px;
+}
+
 input.form-control{
   height:  46px;
   /*font-size: 18px*/

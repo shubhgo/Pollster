@@ -1,16 +1,27 @@
 <div class='row sg-nav-bar'>
-<button class='col-sm-2 btn btn-primary btn-lg' ng-click='home()'>Duels</button>
-<div class='col-sm-10'>
-	<form novalidate class='form-inline' role='form'>
-		<div class="row">
-			<div class="col-sm-offset-4 col-sm-3"><input type='text' class='form-control input-block input-small' id='username' placeholder='Username' ng-model='credentials.username'></div>
-			<div class="col-sm-3"><input type='password' class='form-control input-block' id='password' placeholder='Password' ng-model='credentials.password'></div>
-			<button type='submit' class='col-sm-2 btn btn-primary btn-lg' ng-click='signin(credentials)'>Log In</button>
-		</div>
-	</form>
+<div class='col-sm-4'></div>
+<div class='col-sm-4 text-center'>
+<button class='btn btn-lg sg-nav-btn' ng-click='home()'><i class='fa fa-home'></i></button>
+<button type="button" class='btn btn-lg sg-nav-btn dropdown-toggle' data-toggle='dropdown' aria-expanded='false'><i class='fa fa-user'></i></button>
+<ul class='dropdown-menu pull-right' role='menu'>
+<!-- 	<li>
+	<button type="button" class="sf-nav-btn-link" data-toggle="modal" data-target="#loginModal">Log In</button>
+	</li>
+	<li>
+	<button type="button" class="sf-nav-btn-link" data-toggle="modal" data-target="#signupModal"></button>
+	</li> -->
+	<li>
+	<a type="button" class="sf-nav-btn-link" data-toggle="modal" data-target="#loginModal">Log In</a>
+	</li>
+	<li>
+	<a type="button" class="sf-nav-btn-link" data-toggle="modal" data-target="#signupModal">Sign Up</a>
+	</li>
+<!-- 	<li><a href="#/voterDashboard">Signup</a></li>
+ --></ul>
 </div>
-</div>
-
+<div class='col-sm-4'></div>
+</div><!-- end nav bar -->
+<br>
 <br>
 
 <div class='row sg-header'>
@@ -44,3 +55,110 @@
     	<p> 2015 © <a class='sg-footer-a' href='http://shubhamgoel.me'>Shubham Goel</a> & <a class='sg-footer-a' href='#'>Xavier Malina </a></p>
     </div>
 </div>
+<!-- 
+<a href=""
+   data-toggle="modal"
+   data-target="#myModal" class="btn btn-lg btn-success">Click to open Modal</a>
+<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal">Click to open Modal</a>
+ --><!-- <a data-target="#myModal">Login</a> -->
+<!-- Button trigger modal -->
+<!-- <button type="button" class="sf-nav-btn-link" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button> -->
+
+<!-- Log In Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Login</h4>
+      </div>
+      <div class="modal-body">
+	    <form novalidate role='form'>
+	    <div class="form-group">
+		<label for="username">Username:</label>
+		<input type="username" class="form-control" id="username" placeholder="Enter username" ng-model='credentials.username'>
+		</div>
+		<div class="form-group">
+		<label for="pwd">Password:</label>
+		<input type="password" class="form-control" id='password' placeholder="Enter password" ng-model='credentials.password'>
+		</div>
+		<button type="submit" class="btn sg-btn" data-dismiss="modal" ng-click='signin(credentials)'>Submit</button>
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sign Up Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">SignUp</h4>
+      </div>
+      <div class="modal-body">
+
+<form novalidate class='simple-form' role='form'>
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='name' style='text-align:right;'>Name:</label>
+    <div class='col-sm-9'><input type='text' class='form-control' id='name' placeholder='Enter name' ng-model='credentials.name'></div>
+    <br>
+</div>
+<br>
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='username' style='text-align:right;'>Username:</label>
+    <div class='col-sm-9'><input type='text' class='form-control' id='username' placeholder='Enter desired Username' ng-model='credentials.username'></div>
+    <br><br>
+</div>
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='password' style='text-align:right;'>Password:</label>
+    <div class='col-sm-9'><input type='password' class='form-control' id='password' placeholder='Enter password' ng-model='credentials.password'></div>
+    <br><br>
+</div>
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='email' style='text-align:right;'>Email:</label>
+    <div class='col-sm-9'><input type='email' class='form-control' id='email' placeholder='Enter email' ng-model='credentials.email'></div>
+    <br><br>
+</div>
+
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='boostID' style='text-align:right;'>boostID:</label>
+    <div class='col-sm-9'><input type='text' class='form-control' id='boostID' placeholder='Enter boostID'  ng-model='credentials.boostID'></div>
+    <br><br>
+</div>
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='role' style='text-align:right;'>Role:</label>
+    <div class='col-sm-9'><input type='radio' name='voter' value='voter'  ng-model='credentials.role'> Voter
+    <input type='radio' name='analyst' value='analyst'  ng-model='credentials.role'> Analyst</div>
+    <br>
+</div>
+<button type='submit' class='btn sg-btn' data-dismiss="modal" ng-click='create(credentials)'>Submit</button>
+</form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Click to open Modal</a>
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Basic Modal</h4>
+      </div>
+      <div class="modal-body">
+        <h3>Modal Body</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+ -->

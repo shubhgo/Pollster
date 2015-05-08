@@ -21,6 +21,20 @@ launchControllers.controller('launchCtrl',['$scope', '$http', '$location', 'Auth
 		$scope.signup = function() {
 			$location.path('/signup');
 		};
+		$scope.create = function(credentials) {
+			$http.post('/auth/signup', credentials).success(function(response) {
+				// was already signin
+				if (Number(response) == 200) $location.path('/voterDashboard');
+				
+				// If successful we assign the response to the global user model
+				$scope.authentication.user = response;
+
+				// And redirect to the index page
+				$location.path('/voterDashboard');
+			}).error(function(data, status, headers, config) {
+				errorRedirects(data, status, headers, config, $location);
+			});
+		};
 
 		$scope.signin = function(credentials) {
 			$http.post('/auth/signin', credentials).success(function(response) {
