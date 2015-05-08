@@ -20,7 +20,7 @@
 <div class='row sg-voterdash-top'>
 <!-- <div class=''> -->
  	<div class='col-sm-12 sg-vote-table'>
- 	 	<table class="table table-bordered table-hover">
+ 	 	<table class="table table-hover sg-voterdash-table">
             <thead>
               <tr>
                 <th class='col-sm-9'>Campaign</th>
@@ -60,7 +60,7 @@
     <div class='col-sm-4 sg-vote-widget'>
 		<div class='panel panel-default sg-voterdash sg-voterdash-clickable' ng-click='startVoting()'>
 		<div class='panel-body'>
-			<h2 class='sg-voterdash-underline'>{{remaining}}</h2>
+			<h2 class='sg-voterdash-underline'><span>{{remaining}}</span></h2>
 			<p class='sg-voterdash-underline'><a class='sg-vote' ng-click='startVoting()'>Vote Now</a></p>
 		</div>
 		</div>
@@ -68,7 +68,7 @@
     <div class='col-sm-4 sg-vote-widget'>
 		<div class='panel panel-default sg-voterdash'>
 		<div class='panel-body'>
-	    	<h2 class='sg-voterdash-underline'>132</h2>
+	    	<h2 class='sg-voterdash-underline'><span>132</span></h2>
 	    	<p class='sg-voterdash-underline'>Votes casted</p>
 		</div>
 		</div>
@@ -76,7 +76,7 @@
     <div class='col-sm-4 sg-vote-widget sg-vote-widget-last'>
 		<div class='panel panel-default sg-voterdash'>
 		<div class='panel-body'>
-	    	<h2 class='sg-voterdash-underline'>$140.50</h2>
+	    	<h2 class='sg-voterdash-underline'><span>$140.50</span></h2>
 	    	<p class='sg-voterdash-underline'>Total Earnings</p>
 		</div>
 		</div>

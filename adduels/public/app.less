@@ -11,7 +11,7 @@
 
 /* app css stylesheet */
 @import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
-@import url(http://fonts.googleapis.com/css?family=Raleway:800,400,300);
+@import url(http://fonts.googleapis.com/css?family=Raleway:800,400,200);
 h1, h2, h3, h4, h5, h6, button {
   font-family: 'Bitter', serif;
   color:@sgBlack;
@@ -151,6 +151,7 @@ p, div, a {
   border-left-style: solid;
   border-width: 1px;
   border-color: @sgBlack;
+  position: relative;
 }
 .sg-voterdash-top{
   border-radius: 2px;
@@ -182,21 +183,34 @@ p, div, a {
   // background-color:#1A9172;
   cursor:pointer;
 }
+.sg-voterdash-clickable:hover{
+  background-color: darken(@sgYellow, 10%);
+}
 p.sg-voterdash-underline{
   text-decoration: none;
   font-size: 20px;
   font-weight: lighter;
+  -webkit-text-stroke: 0px @sgBlack;
 }
 .sg-voterdash-underline {
   text-decoration: underline;
   font-weight: bold;
   font-size: 48px;
-  margin-bottom: 0px; 
+  margin-bottom: 0px;
+  color: @sgWhite;
+}
+.sg-voterdash-underline span{
+  color: @sgWhite;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: lighten(@sgBlack, 40%);
+  -webkit-font-smoothing: antialiased;
 }
 .sg-voterdash{
   border-radius: 2px;
   margin-bottom: 0px;
   border-color: @sgBlack;
+  background-color: @sgYellow;
+  color: @sgWhite;
 }
 .sg-voterdash-totalvotes{
   color: white;
@@ -210,6 +224,47 @@ p.sg-voterdash-underline{
   color: white;
   background-color:#303C4F
 }
+.sg-voterdash-table{
+  border-collapse: separate;
+  border-color: @sgBlack;
+  border-radius: 2px;
+  border-width: 1px;
+  border-style: solid;
+  border-bottom: none;
+}
+.sg-voterdash-table td {
+    border-right: 1px solid @sgBlack;
+    border-bottom: 1px solid @sgBlack;
+    border-top: none;
+    border-left: none;
+}
+.sg-voterdash-table.table > tbody > tr > td {
+    border-top:none;
+}
+.table.sg-voterdash-table > thead > tr > th {
+    border-right: 1px solid @sgBlack;
+    border-bottom: 1px solid @sgBlack;
+}
+.table.sg-voterdash-table > thead > tr > th:last-child {
+  border-right: none;
+    // border-radius: 0 6px 0 0;
+}
+// .sg-voterdash-table th:first-child {
+//     // border-radius: 6px 0 0 0;
+// }
+
+// .sg-voterdash-table th:only-child{
+//     // border-radius: 6px 6px 0 0;
+// }
+// .sg-voterdash-table tr:last-child td:first-child {
+//     // border-radius: 0 0 0 6px;
+// }
+// tr:last-child
+.sg-voterdash-table td:last-child {
+  border-right: none;
+    // border-radius: 0 0 6px 0;
+}
+
 .sg-vote-widget{
   padding: 10px;
 }
@@ -217,12 +272,13 @@ p.sg-voterdash-underline{
   padding: 10px;
   // height: 100px;
 }
+
 /*.sg-vote-widget-last{
   padding-right: 5px;
 }
 */
 .sg-vote {
-  color: @sgBlack;
+  color: @sgWhite;
 }
 .sg-vote:hover{
   color: @sgBlack;
@@ -247,7 +303,7 @@ p.sg-cell-chart{
   letter-spacing: 2px;
   font-size: 30px;
   color: @sgWhite;
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: lighten(@sgBlack, 40%);
   -webkit-font-smoothing: antialiased;
   margin-left: 10px;
@@ -504,4 +560,41 @@ body{
 .menu > li:nth-child(1):before {
   content: "";
   padding: 0;
+}
+.embed-responsive-16by6 {
+  padding-bottom: 37.5%;
+}
+.embed-responsive .embed-responsive-item, .embed-responsive video.embed-responsive-item {
+  top:-65px;
+  height: auto;
+}
+// .sg-video {
+//   position: absolute;
+// }
+.sg-video-layover{
+  position: absolute;
+  top: 28%;
+  left: 15px;
+  width: 100%;
+  // background-color: transparent;
+}
+.sg-btn-layover{
+  margin: 10px;
+}
+.sg-btn-layover:hover, .sg-btn-layover:focus, .sg-btn-layover:active, .sg-btn-layover.active {
+  color: darken(@sgGreen, 20%);
+  border-color: darken(@sgGreen, 20%);
+  background: rgba(255, 255, 255, 0.8);
+}
+h1.sg-title {
+  color: @sgWhite;
+  font-size: 68px;
+  text-align: center;
+}
+p.sg-title{
+  color: @sgWhite;
+  text-align: center;
+  font-weight: 200;
+  font-size: 20px;
+  margin-top: -24px;
 }
