@@ -11,7 +11,7 @@
 
 /* app css stylesheet */
 @import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
-@import url(http://fonts.googleapis.com/css?family=Raleway:800,400,200);
+@import url(http://fonts.googleapis.com/css?family=Raleway:700,400,300,200);
 h1, h2, h3, h4, h5, h6, button {
   font-family: 'Bitter', serif;
   color:@sgBlack;
@@ -68,6 +68,15 @@ p, div, a {
 .sg-btn-action {
   border-radius: 2px;
 }
+.sg-btn-analyst {
+  color: @sgYellow;
+  border-color: @sgYellow;
+}
+.sg-btn-analyst:hover, .sg-btn-analyst:focus, .sg-btn-analyst:active, .sg-btn-analyst.active {
+  color: darken(@sgYellow, 20%);
+  border-color: darken(@sgYellow, 20%);
+}
+
 .sg-btn-skip{
   color: darken(@sgWhite, 30%);
   border-color: darken(@sgWhite, 30%);
@@ -292,20 +301,23 @@ div.sg-cell-chart{
   height: 50px;
   background-color: lighten(@sgGreen, 10%);
 }
+div.sg-cell-chart-analyst{
+  background-color: lighten(@sgYellow, 10%);
+}
 // div.sg-cell-chart-training{
 //   background-color: lighten(@sgBlack, 40%);
 // }
 p.sg-cell-chart{
   position: absolute;
   // font-family: 'Bitter', serif;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 30px;
   color: @sgWhite;
-  -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: lighten(@sgBlack, 40%);
-  -webkit-font-smoothing: antialiased;
+  // -webkit-text-stroke-width: 0.5px;
+  // -webkit-text-stroke-color: lighten(@sgBlack, 40%);
+  // -webkit-font-smoothing: antialiased;
   margin-left: 10px;
   margin-top: 5px;
 }
@@ -398,8 +410,9 @@ h1.sg-signup-header{
   border-width: 1px; 
 }
 .sf-duel-top-link {
-  color: lighten(@sgBlack, 30%);
+  color: lighten(@sgBlack, 60%);
   cursor: pointer;
+  font-size: 16px;
 }
 .sf-duel-top-link:hover {
   color: @sgBlack;
@@ -420,6 +433,7 @@ h1.sg-signup-header{
 }
 .sg-duel-vote-last{
   border-bottom-style: solid;
+  padding: 20px;
 }
 .sg-duel-adcontainer {
   border-radius: 2px;
@@ -519,7 +533,7 @@ body{
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: @bodybackground;
-  background-image: url("/assets/images/background_o3.png");
+  background-image: url("/assets/images/background_p2.png");
 
 }
 .border {
@@ -562,12 +576,12 @@ body{
   padding: 0;
 }
 .embed-responsive-16by6 {
-  padding-bottom: 37.5%;
+  padding-bottom: 56.25%;
 }
-.embed-responsive .embed-responsive-item, .embed-responsive video.embed-responsive-item {
-  top:-65px;
-  height: auto;
-}
+// .embed-responsive .embed-responsive-item, .embed-responsive video.embed-responsive-item {
+//   top:-65px;
+//   height: auto;
+// }
 // .sg-video {
 //   position: absolute;
 // }
@@ -590,6 +604,8 @@ body{
 h1.sg-title {
   color: @sgWhite;
   font-size: 68px;
+  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
   text-align: center;
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: lighten(@sgBlack, 40%);
@@ -598,10 +614,15 @@ h1.sg-title {
 p.sg-title{
   color: @sgWhite;
   text-align: center;
+  font-family: 'Bitter', serif;
   font-weight: 200;
   font-size: 20px;
-  margin-top: -24px;
+  margin-top: -16px;
 }
 hr.sg-title {
   margin: 0px;
+}
+.sg-launch-info{
+  padding: 25px;
+  padding-top: 10px;
 }

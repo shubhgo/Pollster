@@ -20,17 +20,17 @@
 <br>
 <div class='row sg-duel-top'>
 <div class='col-sm-3'>
-	<h3>Boost Media Campaign
+	<h3>Boost Media Polling Project
 	<a type="button" class="sf-duel-top-link" data-toggle="modal" data-target="#campaignModal"><i class="fa fa-info-circle"></i></a>
 	</h3>
 </div>
 <div class='col-sm-offset-5 col-sm-2 sg-duel-top-widgets'>
 	<h3>$12.50</h3>
-	<p>Earning</p>
+	<p>Earned</p>
 </div>
 <div class='col-sm-2 sg-duel-top-widgets'>
 	<h3>23</h3>
-	<p>Attempted</p>
+	<p>Votes Cast</p>
 </div>
 </div>
 <!-- Keywords -->
@@ -43,9 +43,9 @@
 
 <div class='col-sm-9'>
 
-	 <span class="label  sg-key-word">rose red</span>
-        <span class="label  sg-key-word">love roses</span>
-     <span class="label  sg-key-word">glass roses flowers</span>
+	 <span class="label  sg-key-word">shoes online</span>
+        <span class="label  sg-key-word">online shoe store</span>
+     <span class="label  sg-key-word">cute online shoes</span>
 
 </div>
 </div>
@@ -55,12 +55,13 @@
           <input type="checkbox" ng-model="todo.done">
           <span class="done-{{todo.done}}">{{todo.text}}</span>
         </li>
-{{duel.keywords}}
+
  -->
 
 <div class='row sg-duel-vote'>
 <!-- 6-6 -->
-<div class='col-sm-5 col-xs-5 sg-duel-adcontainer' ng-click="next('VoteAdA')">
+<div class='col-sm-1'></div>
+<div class='col-sm-4 col-xs-5 sg-duel-adcontainer' ng-click="next('VoteAdA')">
 	<div class='col-sm-1 col-xs-2 sg-duel-chevron'>
 		<h4><i class="fa fa-chevron-right"></i></h4>
 	</div>
@@ -81,7 +82,7 @@
 	</div>
 
 </div>
-<div class='col-sm-5 col-xs-5 sg-duel-adcontainer' ng-click="next('VoteAdB')">
+<div class='col-sm-4 col-xs-5 sg-duel-adcontainer' ng-click="next('VoteAdB')">
 	<div class='col-sm-11 col-xs-10 sg-duel-adbox sg-duel-adbox-right'>
 	  		<a href="{{adA.destinationURL}}">{{adB.title}}</a>
 	  		<p>{{adB.displayURL}}<br>
@@ -94,9 +95,15 @@
 	</div>
 
 </div>
+<div class='col-sm-1'></div>
 </div>
 
 <div class='row sg-duel-vote sg-duel-vote-last'>
+    <label class='form-control-static' for='adAText' style='text-align:right;'>Comments:</label>
+    <div class=''><textarea class='form-control' placeholder='Enter Ad Text' rows='3' ng-model='credentials.adAText'></textarea>
+    <br>
+    </div>
+
 <br>
 </div>
 <div class='row'>

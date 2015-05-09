@@ -1,13 +1,177 @@
-<p>Duels running {{running}} </p>
-<p>Duels completed: {{completed}} </p>
-<p>Total number of duels: {{allDuelCount}} </p>
-<div class="col-sm-12">
-	<ul>
-        <li ng-repeat="duel in duels">
-        	<p>{{duel.keywords}}</p>
-        	<p>{{duel.votesACount}}</p>
-        	<p>{{duel.votesBCount}}</p>
-        	<p>{{duel.status}}</p>			
-		</li>
-	</ul>
+<div class='row sg-nav-bar'>
+<div class='col-sm-4'></div>
+<div class='col-sm-4 text-center'>
+<button class='btn btn-lg sg-nav-btn' ng-click='home()'><i class='fa fa-home'></i></button>
+<button class='btn btn-lg sg-nav-btn' ng-click='manageVoters()'>
+	<i class='fa fa-users'></i>
+	</button>
+<button type="button" class='btn btn-lg sg-nav-btn dropdown-toggle' data-toggle='dropdown' aria-expanded='false'><i class='fa fa-user'></i></button>
+<ul class='dropdown-menu pull-right' role='menu'>
+	<li><a>{{name}}</a> </li>
+	<li class="divider"></li>
+    <li><a href="#/voterDashboard">Profile</a></li>
+    <li><a href="#/voterDashboard">Change Password</a></li>
+    <li><a ng-click='logout()'>Log Out</a></li>
+</ul>
 </div>
+<div class='col-sm-4'></div>
+</div><!-- end nav bar -->
+<br>
+<div class='row sg-voterdash-top'>
+<!-- <div class=''> -->
+	<div class='col-sm-3'>
+  <button data-toggle="modal" data-target="#createPoll" class="btn sg-btn sg-btn-analyst sg-btn-action">Create Poll</button></div>
+ 	<div class='col-sm-12 sg-vote-table'>
+ 	 	<table class="table table-hover sg-voterdash-table">
+            <thead>
+              <tr>
+                <th class='col-sm-9'>Manage Polling Projects</th>
+                <th class='col-sm-1'>Progress</th>
+                <th class='col-sm-2'>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class='sg-cell-chart'><div class='sg-cell-chart sg-cell-chart-analyst sg-cell-chart-training' style="width: 50%;"><p class='sg-cell-chart'>What An App PVT LTD</p></div></td>
+                <td>50%</td>
+                <td><button ng-click="next('skip')" class="btn center-block btn-block sg-btn sg-btn-analyst sg-btn-action">Stop</button></td>
+              </tr>
+              <tr>
+		        <td class='sg-cell-chart'><div class='sg-cell-chart sg-cell-chart-analyst sg-cell-chart-training' style="width: 20%;"><p class='sg-cell-chart'>Beach Body</p></div></td>
+		        <td>20%</td>
+                <td><button ng-click="next('skip')" class="btn center-block btn-block sg-btn sg-btn-analyst sg-btn-action">Stop</button></td>
+              </tr>
+              <tr>
+		        <td class='sg-cell-chart'><div class='sg-cell-chart sg-cell-chart-analyst' style="width: 100%;"><p class='sg-cell-chart'>american airlines</p></div></td>
+		        <td>100%</td>
+                <td><button ng-click="next('skip')" class="btn center-block btn-block sg-btn sg-btn-analyst sg-btn-action">Restart</button></td>
+              </tr>
+              <tr>
+		        <td class='sg-cell-chart'><div class='sg-cell-chart sg-cell-chart-analyst' style="width: 0%;"><p class='sg-cell-chart'>Cafe Yesterday</p></div></td>
+		        <td>0%</td>
+                <td><button ng-click="next('skip')" class="btn center-block btn-block sg-btn sg-btn-analyst sg-btn-action">Start</button></td>
+              </tr>
+              <tr>
+		        <td class='sg-cell-chart'><div class='sg-cell-chart sg-cell-chart-analyst' style="width: 40%;"><p class='sg-cell-chart'>NASA</p></div></td>
+		        <td>40%</td>
+                <td><button ng-click="next('skip')" class="btn center-block btn-block sg-btn sg-btn-analyst sg-btn-action">Stop</button></td>
+              </tr>
+            </tbody>
+          </table>
+	</div>
+<!--     <div class='col-sm-4 sg-vote-widget'>
+		<div class='panel panel-default sg-voterdash sg-voterdash-clickable' ng-click='startVoting()'>
+		<div class='panel-body'>
+			<h2 class='sg-voterdash-underline'><span>{{remaining}}</span></h2>
+			<p class='sg-voterdash-underline'><a class='sg-vote' ng-click='startVoting()'>Vote Now</a></p>
+		</div>
+		</div>
+    </div>
+    <div class='col-sm-4 sg-vote-widget'>
+		<div class='panel panel-default sg-voterdash'>
+		<div class='panel-body'>
+	    	<h2 class='sg-voterdash-underline'><span>132</span></h2>
+	    	<p class='sg-voterdash-underline'>Votes casted</p>
+		</div>
+		</div>
+    </div>
+    <div class='col-sm-4 sg-vote-widget sg-vote-widget-last'>
+		<div class='panel panel-default sg-voterdash'>
+		<div class='panel-body'>
+	    	<h2 class='sg-voterdash-underline'><span>$140.50</span></h2>
+	    	<p class='sg-voterdash-underline'>Total Earnings</p>
+		</div>
+		</div>
+    </div>
+ -->
+</div>
+
+
+
+
+<div class='row sg-footer'>
+    <div class='col-sm-12'>
+    	<p> 2015 © <a class='sg-footer-a' href='http://shubhamgoel.me'>Shubham Goel</a> & <a class='sg-footer-a' href='#'>Xavier Malina </a></p>
+    </div>
+</div>
+
+
+
+<!-- Create Poll Modal -->
+<div class="modal fade" id="createPoll" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create Poll</h4>
+        <p>Create a poll to get feedback between two choices</p>
+      </div>
+      <div class="modal-body">
+
+<form novalidate class='simple-form' role='form'>
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='campaignname' style='text-align:right;'>Campaign Name:</label>
+    <div class='col-sm-9'><input type='text' class='form-control' id='campaignname' placeholder='Enter name' ng-model='credentials.campaignname'>
+    <br>
+    </div>
+
+</div>
+
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='polltype' style='text-align:right;'>Poll Type:</label>
+
+    <div class='col-sm-9'>
+    <select class="form-control" id="polltype">
+        <option>Advertisement</option>
+        <option>Photo</option>
+        <option>Text</option>
+        <option>Product Name</option>
+      </select>
+<!--     <input type='text' class='form-control' id='adAText' placeholder='Enter Ad Text' ng-model='credentials.adAText'> -->
+<br>
+    </div>
+    
+</div>
+
+<br>
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='keywords' style='text-align:right;'>Search Keywords:</label>
+    <div class='col-sm-9'><input type='text' class='form-control' id='keywords' placeholder='Enter Keywords' ng-model='credentials.keywords'>
+    <br>
+    </div>
+</div>
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='adAText' style='text-align:right;'>First Ad Text:</label>
+    <div class='col-sm-9'><textarea class='form-control' placeholder='Enter Ad Text' rows='3' ng-model='credentials.adAText'></textarea>
+    <br>
+    </div>
+</div>
+
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='adAURL' style='text-align:right;'>First Ad URL:</label>
+    <div class='col-sm-9'><input type='text' class='form-control' id='adAURL' placeholder='Enter Display URL' ng-model='credentials.adAURL'>
+    <br>
+    </div>
+</div>
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='adBText' style='text-align:right;'>Second Ad Text:</label>
+    <div class='col-sm-9'><textarea class='form-control' placeholder='Enter Ad Text' rows='3' ng-model='credentials.adBText'></textarea>
+    <br>
+    </div>
+</div>
+
+<div class='form-group'>
+    <label class='col-sm-3 form-control-static' for='asBURL' style='text-align:right;'>Second Ad URL:</label>
+    <div class='col-sm-9'><input type='text' class='form-control' id='asBURL' placeholder='Enter Display URL' ng-model='credentials.asBURL'>
+    <br>
+    </div>
+</div>
+<button type='submit' class='btn sg-btn' data-dismiss="modal" ng-click='createPoll(credentials)'>Create Draft</button>
+</form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+

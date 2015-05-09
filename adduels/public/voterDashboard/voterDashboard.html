@@ -23,35 +23,41 @@
  	 	<table class="table table-hover sg-voterdash-table">
             <thead>
               <tr>
-                <th class='col-sm-9'>Campaign</th>
+                <th class='col-sm-8'>Polling Project</th>
                 <th class='col-sm-1'>Progress</th>
-                <th class='col-sm-2'>Action</th>
+                <th class='col-sm-1'>$ / Poll</th>
+                <th class='col-sm-2' style='text-align:center;'>Action</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td class='sg-cell-chart'><div class='sg-cell-chart sg-cell-chart-training' style="width: 5%;"><p class='sg-cell-chart'>Boost Media</p></div></td>
                 <td>5%</td>
-                <td><button ng-click="next('skip')" class="btn center-block btn-block sg-btn sg-btn-action">Complete Training</button></td>
+                <td>$0.10</td>
+                <td><button ng-click="next('skip')" class="btn center-block btn-block sg-btn sg-btn-action">Train</button></td>
               </tr>
               <tr>
 		        <td class='sg-cell-chart'><div class='sg-cell-chart sg-cell-chart-training' style="width: 30%;"><p class='sg-cell-chart'>Nike</p></div></td>
 		        <td>30%</td>
-                <td><button ng-click="next('skip')" class="btn center-block btn-block sg-btn sg-btn-action">Complete Training</button></td>
+            <td>$0.10</td>
+                <td><button ng-click="next('skip')" class="btn center-block btn-block sg-btn sg-btn-action">Train</button></td>
               </tr>
               <tr>
 		        <td class='sg-cell-chart'><div class='sg-cell-chart' style="width: 100%;"><p class='sg-cell-chart'>Geiko</p></div></td>
 		        <td>100%</td>
-                <td><button ng-click="next('skip')" class="btn center-block btn-block sg-btn sg-btn-action">Start Voting</button></td>
+            <td>$0.05</td>
+                <td><button ng-click="next('skip')" class="btn center-block btn-block sg-btn sg-btn-action">Vote</button></td>
               </tr>
               <tr>
 		        <td class='sg-cell-chart'><div class='sg-cell-chart' style="width: 0%;"><p class='sg-cell-chart'>Ashby Flowers</p></div></td>
 		        <td>0%</td>
-                <td><button ng-click="next('skip')" class="btn center-block btn-block sg-btn sg-btn-action">Vote</button></td>
+            <td>$0.05</td>
+                <td><button ng-click="next('skip')" class="btn center-block btn-block sg-btn sg-btn-action">Train</button></td>
               </tr>
               <tr>
 		        <td class='sg-cell-chart'><div class='sg-cell-chart' style="width: 40%;"><p class='sg-cell-chart'>The Station</p></div></td>
 		        <td>40%</td>
+            <td>$0.10</td>
                 <td><button ng-click="next('skip')" class="btn center-block btn-block sg-btn sg-btn-action">Vote</button></td>
               </tr>
             </tbody>
@@ -61,7 +67,7 @@
 		<div class='panel panel-default sg-voterdash sg-voterdash-clickable' ng-click='startVoting()'>
 		<div class='panel-body'>
 			<h2 class='sg-voterdash-underline'><span>{{remaining}}</span></h2>
-			<p class='sg-voterdash-underline'><a class='sg-vote' ng-click='startVoting()'>Vote Now</a></p>
+			<p class='sg-voterdash-underline'><a class='sg-vote' ng-click='startVoting()'>New Polls Available</a></p>
 		</div>
 		</div>
     </div>
@@ -69,7 +75,7 @@
 		<div class='panel panel-default sg-voterdash'>
 		<div class='panel-body'>
 	    	<h2 class='sg-voterdash-underline'><span>132</span></h2>
-	    	<p class='sg-voterdash-underline'>Votes casted</p>
+	    	<p class='sg-voterdash-underline'>Total Votes Cast</p>
 		</div>
 		</div>
     </div>
