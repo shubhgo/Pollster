@@ -17,27 +17,27 @@ pollsterApp.config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider.
 			when('/', {
-				templateUrl: 'launchPage/launch.html',
+				templateUrl: 'modules/launchPage/launch.html',
 				controller: 'launchCtrl'
 			}).
 			when('/login', {
-				templateUrl: 'launchPage/login.html',
+				templateUrl: 'modules/launchPage/login.html',
 				controller: 'logInCtrl'
 			}).
 			when('/fourOthree', {
-				templateUrl: 'launchPage/fourOthree.html',
+				templateUrl: 'modules/launchPage/fourOthree.html',
 				controller: 'fourOthreeCtrl'
 			}).
 			when('/voterDashboard', {
-				templateUrl: 'voterDashboard/voterDashboard.html',
+				templateUrl: 'modules/voterDashboard/voterDashboard.html',
 				controller: 'voterDashCtrl'
 			}).
 			when('/duels/:duelId', {
-				templateUrl: 'duels/duels.html',
+				templateUrl: 'modules/duels/duels.html',
 				controller: 'votingCtrl'
 			}).
 			when('/analystDashboard', {
-				templateUrl: 'analystDashboard/analystDashboard.html',
+				templateUrl: 'modules/analystDashboard/analystDashboard.html',
 				controller: 'analystDashCtrl'
 			}).
 			otherwise({
@@ -47,14 +47,14 @@ pollsterApp.config(['$routeProvider',
 // duels/553aa213beba92d6034594c6
 
 			// when('/signup', {
-			// 	templateUrl: 'launchPage/signup.html',
+			// 	templateUrl: 'modules/launchPage/signup.html',
 			// 	controller: 'signUpCtrl'
 			// }).
 			// when('/logout', {
-			// 	templateUrl: 'launchPage/logout.html',
+			// 	templateUrl: 'modules/launchPage/logout.html',
 			// 	controller: 'logOutCtrl'
 			// }).
 			// when('/loggedout', {
-			// 	templateUrl: 'launchPage/loggedout.html',
+			// 	templateUrl: 'modules/launchPage/loggedout.html',
 			// 	controller: 'logOutCtrl'
 			// }).

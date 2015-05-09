@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /* Duels voting page controller and duel services */
 /*
@@ -18,7 +18,30 @@ var duelsControllers = angular.module('duelsControllers', []);
 
 duelsControllers.controller('votingCtrl', ['$scope', '$routeParams', '$http', '$location','duels', 'ads', 'Authentication',
 function($scope, $routeParams, $http, $location, duels, ads, Authentication) {
-  	$scope.duel;
+    // as functions inside a function may not 'hoist' as expected
+    function getAd(adID, isA) {
+        ads.getAd(adID)
+            .success(function (data) {
+                isA? ($scope.adA = data): ($scope.adB = data);
+            })
+            .error(function(data, status, headers, config) {
+                errorRedirects(data, status, headers, config, $location);
+            });
+    }
+
+    function getDuel(duelId) {
+        duels.getDuel(duelId)
+            .success(function (data) {
+                $scope.duel = data;
+                getAd(data.adAID, true);
+                getAd(data.adBID, false);
+            })
+            .error(function(data, status, headers, config) {
+                errorRedirects(data, status, headers, config, $location);
+            });
+    }
+
+  	$scope.duel = {};
   	$scope.adA = {title:'__',displayURL:'__',line1:'__',line2:'__'};
   	$scope.adB = {title:'__',displayURL:'__',line1:'__',line2:'__'};
 
@@ -63,50 +86,28 @@ function($scope, $routeParams, $http, $location, duels, ads, Authentication) {
 
   	getDuel($routeParams.duelId);
 
-    function getAd(adID, isA) {
-    	ads.getAd(adID)
-	    	.success(function (data) {
-	    		isA? ($scope.adA = data): ($scope.adB = data);
-	    	})
-	    	.error(function(data, status, headers, config) {
-                errorRedirects(data, status, headers, config, $location);
-            });
-    };
-
-    function getDuel(duelId) {
-        duels.getDuel(duelId)
-            .success(function (data) {
-                $scope.duel = data;
-                getAd(data.adAID, true);
-                getAd(data.adBID, false);
-            })
-            .error(function(data, status, headers, config) {
-                errorRedirects(data, status, headers, config, $location);
-            });
-    };
-
     $scope.next = function(action){
     	/// todo: update the duel object with vote count etc
     	/// todo: record the vote
     	console.log(action);
 
     	switch (action) {
-		  case "VoteAdA":
+		  case 'VoteAdA':
 		  	$scope.duel.votesACount++;
 		  	$scope.duel.totalVotes++;
 		  	$scope.duel.totalViews++;
 		    break;
-		  case "equal":
+		  case 'equal':
 		  	$scope.duel.noOpinionCount++;
 		  	$scope.duel.totalVotes++;
 		  	$scope.duel.totalViews++;
 		    break;
-		  case "VoteAdB":
+		  case 'VoteAdB':
 		  	$scope.duel.votesBCount++;
 		  	$scope.duel.totalVotes++;
 		  	$scope.duel.totalViews++;
 		    break;
-		  case "skip":
+		  case 'skip':
 		  	$scope.duel.totalViews++;
 		    break;
 		  default:
@@ -135,7 +136,7 @@ function($scope, $routeParams, $http, $location, duels, ads, Authentication) {
 						});
 					})
 					.error(function(data, status, headers, config) {
-						$scope.status = 'Unable to add vote: ' + vote + ' error: ' + error.message;
+						$scope.status = 'Unable to add vote: ' + vote + ' error: ' + error.status;
 					});
     		})
     		.error(function(data, status, headers, config) {

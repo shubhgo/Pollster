@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /* Voter Dashboard controller */
 /* voterDashCtrl
@@ -43,7 +43,7 @@ voterDashControllers.controller('voterDashCtrl',['$scope', '$http', '$location',
 		};
 
 		$scope.remaining = 0;
-		$scope.startVoting;
+		$scope.startVoting = {};
 		///todo: remove user hard coding
 
 		$http.get('/api/duels/voter/status/running').
@@ -53,7 +53,7 @@ voterDashControllers.controller('voterDashCtrl',['$scope', '$http', '$location',
 				$scope.startVoting = function() {
 					$location.url('/duels/'+data[0]);
 				};
-			};
+			}
 			// console.log($scope.authentication.user);
 		}).
 		error(function(data, status, headers, config) {

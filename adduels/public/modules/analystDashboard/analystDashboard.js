@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /* Analyst Dashboard controller */
 
@@ -8,8 +8,8 @@ analystDashControllers.controller('analystDashCtrl',['$scope', '$http', '$locati
 	function($scope, $http, $location) {
 		$scope.running=0;
 		$scope.completed=0;
-		$scope.allDuelCount;
-		$scope.duels;// array with all the duels created by this analyst
+		$scope.allDuelCount=0;
+		$scope.duels=[];// array with all the duels created by this analyst
 
 		///todo: remove user hard coding
 		var analystID = '5542a1f0868d07853f0c2dbe';
@@ -22,7 +22,7 @@ analystDashControllers.controller('analystDashCtrl',['$scope', '$http', '$locati
 			$scope.duels.forEach(function(singleDuel) {
 				if(singleDuel.status == 'running') $scope.running++;
 				if(singleDuel.status == 'completed') $scope.completed++;
-			})
+			});
 		}).
 		error(function(data, status, headers, config) {
 				errorRedirects(data, status, headers, config, $location);

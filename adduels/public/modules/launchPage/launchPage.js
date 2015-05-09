@@ -122,8 +122,8 @@ launchControllers.controller('logInCtrl',['$scope', '$http', '$location', 'Authe
 // 		};
 // }]);
 
-launchControllers.controller('fourOthreeCtrl', [,
-	function() {
+launchControllers.controller('fourOthreeCtrl', ['$scope',
+	function($scope) {
 		$scope.message = "How did you get here BRO??";
 }]);
 
