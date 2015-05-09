@@ -45,9 +45,8 @@ voterDashControllers.controller('voterDashCtrl',['$scope', '$http', '$location',
 		$scope.remaining = 0;
 		$scope.startVoting;
 		///todo: remove user hard coding
-		var baseURL = 'http://localhost:3000/api';
 
-		$http.get(baseURL+'/duels/voter/status/running').
+		$http.get('/api/duels/voter/status/running').
 		success(function(data) {
 			$scope.remaining = data.length;
 			if (data.length > 0) {

@@ -12,10 +12,9 @@ analystDashControllers.controller('analystDashCtrl',['$scope', '$http', '$locati
 		$scope.duels;// array with all the duels created by this analyst
 
 		///todo: remove user hard coding
-		var baseURL = 'http://localhost:3000/api';
 		var analystID = '5542a1f0868d07853f0c2dbe';
 
-		$http.get(baseURL+'/duels/analyst/' + analystID).
+		$http.get('/api/duels/analyst/' + analystID).
 		success(function(data) {
 			$scope.duels = data;
 			$scope.allDuelCount = data.length;

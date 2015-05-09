@@ -49,7 +49,7 @@ function($scope, $routeParams, $http, $location, duels, ads, Authentication) {
             errorRedirects(data, status, headers, config, $location);
         });
     };
-    $http.get('http://localhost:3000/api/duels/voter/status/running').
+    $http.get('/api/duels/voter/status/running').
     success(function(data) {
         $scope.remaining = data.length;
         $scope.startVoting = function() {
@@ -116,17 +116,13 @@ function($scope, $routeParams, $http, $location, duels, ads, Authentication) {
     	duels.updateDuel($scope.duel)
     		.success(function (argument) {
     			// Ad vote
-    			///todo: IMP****replace user id hard coding*****
     			var vote = {
     					duelID: $scope.duel._id,
-						voterID: '32452345235',
 						'action': action
     			};
-				$http.post('http://localhost:3000/api/votes', vote)
+				$http.post('/api/votes', vote)
 					.success(function(data, status, headers, config) {
-				    	var baseURL = 'http://localhost:3000/api';
-				    	///todo: replace user id hard coding
-				    	$http.get(baseURL+'/duels/voter/status/running').
+				    	$http.get('/api/duels/voter/status/running').
 						success(function(data) {
                             if (data.length > 0) {
                                 $location.url('/duels/'+data[0]);
@@ -156,7 +152,7 @@ var duelsFactory = angular.module('duelsFactory', []);
 
 duelsFactory.factory('duels', ['$http', function($http) {
 
-    var urlBase = 'http://localhost:3000/api/duels';
+    var urlBase = '/api/duels';
     var duels = {};
 
     duels.getDuels = function () {
@@ -185,11 +181,10 @@ duelsFactory.factory('duels', ['$http', function($http) {
 // var adsFactory = angular.module('adsFactory', []);
 duelsFactory.factory('ads', ['$http', function($http) {
 
-	var urlBase = 'http://localhost:3000/api/ads';
 	var ads = {};
 
 	ads.getAd = function (id) {
-		return $http.get(urlBase + '/' + id);
+		return $http.get('/api/ads/' + id);
 	};
 
 	return ads;
