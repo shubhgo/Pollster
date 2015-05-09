@@ -2,7 +2,7 @@
 
 module.exports = {
 	app: {
-		title: 'adDuels',
+		title: 'pollster',
 		description: 'Full stack app for solving big problems in the AB testing industry',
 		keywords: 'MongoDB, Express, AngularJS, Node.js'
 	},

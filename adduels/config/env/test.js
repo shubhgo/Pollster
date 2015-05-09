@@ -4,7 +4,7 @@ module.exports = {
 	db: 'mongodb://localhost/adduels-test',
 	port: 3001,
 	app: {
-		title: 'adDuels - Test Environment'
+		title: 'pollster - Test Environment'
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',
