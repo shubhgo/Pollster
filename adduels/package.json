@@ -1,7 +1,7 @@
 {
-  "name": "adduels",
-  "description": "Full stack app for solving big problems in the AB testing industry",
-  "version": "0.0.1",
+  "name": "pollster",
+  "description": "Full stack single page application for making better decisions",
+  "version": "0.0.9",
   "author": "Shubham Goel",
   "engines": {
     "node": "0.10.x",

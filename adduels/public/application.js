@@ -2,7 +2,7 @@
 
 /* App Module */
 
-var adDuelsApp = angular.module('adduels', [
+var pollsterApp = angular.module('pollster', [
   'ngRoute',
   'duelsControllers',
   'duelsFactory',
@@ -13,7 +13,7 @@ var adDuelsApp = angular.module('adduels', [
   // 'duelsServices'
 ]);
 
-adDuelsApp.config(['$routeProvider',
+pollsterApp.config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider.
 			when('/', {
