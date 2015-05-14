@@ -41,7 +41,11 @@ launchControllers.controller('launchCtrl',['$scope', '$http', '$location', 'Auth
 				// And redirect to the index page
 				$location.path('/voterDashboard');
 			}).error(function(data, status, headers, config) {
-				errorRedirects(data, status, headers, config, $location);
+				if(status=='403'){
+					$location.path('/voterDashboard');
+				} else {
+					errorRedirects(data, status, headers, config, $location);
+				}
 			});
 		};
 }]);
