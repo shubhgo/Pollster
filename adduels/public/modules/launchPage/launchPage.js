@@ -146,6 +146,6 @@ var errorRedirects = function(data, status, headers, config, $location) {
 	console.log('API called failed');
 	console.log('data: ' + data);
 	console.log('status: ' + status);
-	if (Number(status) == 401) $location.path('/login');
+	if (Number(status) == 401) $location.path('/');
 	if (Number(status) == 403) $location.path('/fourOthree');
 };
