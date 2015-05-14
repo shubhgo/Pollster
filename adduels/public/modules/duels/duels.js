@@ -32,6 +32,11 @@ function($scope, $routeParams, $http, $location, duels, ads, Authentication) {
     function getDuel(duelId) {
         duels.getDuel(duelId)
             .success(function (data) {
+                var keywords = [];
+                data.keywords.split(',').forEach(function(data,index) {
+                    if(index < 3){keywords.push(data.trim());} 
+                });
+                data.keywords = keywords;
                 $scope.duel = data;
                 getAd(data.adAID, true);
                 getAd(data.adBID, false);

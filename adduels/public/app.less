@@ -8,6 +8,30 @@
 @bodybackground:@sgBlack;
 @footer:@sgWhite;
 // old body color: #E2E5E6
+h1,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Bitter, serif;
+    color: #252323;
+}
+
+h2 {
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    font-size: 2.6em;
+    text-align: left;
+    color: #252323;
+}
+
+a,
+div,
+p {
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+}
+
 
 /* app css stylesheet */
 @import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
@@ -15,6 +39,13 @@
 h1, h2, h3, h4, h5, h6, button {
   font-family: 'Bitter', serif;
   color:@sgBlack;
+}
+h2 {
+  font-family: Raleway, sans-serif;
+  font-weight: 600;
+  font-size: 2.6em;
+  text-align: left;
+  color: #252323;
 }
 p, div, a {
   font-family: 'Raleway', sans-serif;
@@ -519,6 +550,7 @@ div.sg-duel-chevron {
   font-size: 18px;
     /* padding: 2px; */
   margin-top: 4px;
+  margin-right: 4px;
 }
 
 input.form-control{
@@ -593,6 +625,8 @@ body{
   // background-color: transparent;
 }
 .sg-btn-layover{
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
   margin: 10px;
   background: rgba(0,0,0, 0.3);
 }
@@ -610,6 +644,8 @@ h1.sg-title {
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: lighten(@sgBlack, 40%);
   -webkit-font-smoothing: antialiased;
+  padding-bottom: 70px;
+  margin: -70px;
 }
 p.sg-title{
   color: @sgWhite;
@@ -618,6 +654,7 @@ p.sg-title{
   font-weight: 200;
   font-size: 20px;
   margin-top: -16px;
+  padding-bottom: 10px;
 }
 hr.sg-title {
   margin: 0px;
